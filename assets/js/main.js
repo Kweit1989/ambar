@@ -19,24 +19,24 @@
    */
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
 
-  function mobileNavToogle() {
-    document.querySelector('body').classList.toggle('mobile-nav-active');
-    mobileNavToggleBtn.classList.toggle('bi-list');
-    mobileNavToggleBtn.classList.toggle('bi-x');
-  }
-  mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+  // function mobileNavToogle() {
+  //   document.querySelector('body').classList.toggle('mobile-nav-active');
+  //   mobileNavToggleBtn.classList.toggle('bi-list');
+  //   mobileNavToggleBtn.classList.toggle('bi-x');
+  // }
+  // mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
 
   /**
    * Hide mobile nav on same-page/hash links
    */
-  document.querySelectorAll('#navmenu a').forEach(navmenu => {
-    navmenu.addEventListener('click', () => {
-      if (document.querySelector('.mobile-nav-active')) {
-        mobileNavToogle();
-      }
-    });
+  // document.querySelectorAll('#navmenu a').forEach(navmenu => {
+  //   navmenu.addEventListener('click', () => {
+  //     if (document.querySelector('.mobile-nav-active')) {
+  //       mobileNavToogle();
+  //     }
+  //   });
 
-  });
+  // });
 
   /**
    * Toggle mobile nav dropdowns
@@ -247,20 +247,19 @@
 
    const myPlacemark = new ymaps.Placemark(
       [54.380015, 48.578532],
-    {
-  hintContent: 'Кафе AMBAR — уютное место в центре города',
-  balloonContent: `
-    <strong>Кафе AMBAR</strong><br>
-    Идеальное место для душевных встреч, вкусных обедов и тёплых вечеров.<br>
-    Ждём вас ежедневно!<br><br>
-    <a href="https://taxi.yandex.ru/ru_ru?utm_source=yamaps&utm_medium=api&gfrom=%2C&gto=54.380015%2C48.578532&level&ref=2334695&tariff&referrer=appmetrica_tracking_id%3D241755468559577482%26ym_tracking_id%3D3086361319693819511" 
-       target="_blank" 
-       style="display:inline-block;padding:8px 12px;background:#cda45e;color:#000;text-decoration:none;border-radius:4px;font-weight:bold;">
-      🚕 Доехать на такси
-    </a>
-  `
-}
-,
+      {
+      hintContent: 'Кафе AMBAR — уютное место в центре города',
+      balloonContent: `
+        <strong>Кафе AMBAR</strong><br>
+        Идеальное место для душевных встреч, вкусных обедов и тёплых вечеров.<br>
+        Ждём вас ежедневно!<br><br>
+        <a href="https://taxi.yandex.ru/ru_ru?utm_source=yamaps&utm_medium=api&gfrom=%2C&gto=54.380015%2C48.578532&level&ref=2334695&tariff&referrer=appmetrica_tracking_id%3D241755468559577482%26ym_tracking_id%3D3086361319693819511" 
+          target="_blank" 
+          style="display:inline-block;padding:8px 12px;background:#cda45e;color:#000;text-decoration:none;border-radius:4px;font-weight:bold;">
+          🚕 Доехать на такси
+        </a>
+      `
+        },
       {
         iconLayout: 'default#image',
         iconImageHref: './assets/img/yandex.png', // сюда — иконка с псевдо-3D-эффектом
@@ -271,7 +270,46 @@
     myMap.geoObjects.add(myPlacemark);
   }
 
+  // Меню бургер
+  const menuBurgerWrapper = document.querySelector('.menu-burger-wrapper');
+  const menuBurger = document.querySelector('.menu-burger');
+  const navMenu = document.getElementById('navmenu');
+  const navMenuUl = document.getElementById('navmenu-ul');
+  const navMenuUlLi = document.querySelectorAll('#navmenu-ul > li');
+  
+
+  // Обработчик для клика на menuBurgerWraper
+  menuBurgerWrapper.addEventListener('click', function () {
+    if (menuBurger.classList.contains('active')) {
+      menuBurger.classList.remove('active');
+      navMenuUl.classList.remove('active');
+      document.body.style.overflow = ''; 
+        setTimeout(() => {
+        navMenu.classList.remove('active');
+      }, 300);
+    } else {
+      menuBurger.classList.add('active');
+      navMenu.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      // Задержка примерно 100 мс (можешь уменьшить до 50, если нужно быстрее)
+      setTimeout(() => {
+        navMenuUl.classList.add('active');
+      }, 300);
+    }
+  });
+
+  navMenuUlLi.forEach(li => {
+    li.addEventListener('click', function () {
+
+    menuBurger.classList.remove('active');
+    navMenuUl.classList.remove('active');
+    document.body.style.overflow = ''; 
+      setTimeout(() => {
+      navMenu.classList.remove('active');
+    }, 300);
+
+    })
+  })
+
 })();
 
-
-//[54.380015, 48.578532]
