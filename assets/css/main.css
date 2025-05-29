@@ -87,6 +87,12 @@ h6 {
   font-family: var(--heading-font);
 }
 
+input[type="time"] {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 /* PHP Email Form Messages
 ------------------------------*/
 .php-email-form .error-message {
