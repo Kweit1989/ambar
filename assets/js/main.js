@@ -216,14 +216,26 @@
   // Инициализация
   const swiper = new Swiper('.swiper-menu', {
     loop: false,
-    slidesPerView: 5,
+    slidesPerView: 2, // По умолчанию (до 768px)
     spaceBetween: 30,
     pagination: {
-      el: '.swiper-pagination',
+      el: ".swiper-menu-paggination",
+      clickable: true,
     },
     navigation: {
       nextEl: '.swiper-menu-button-next',
       prevEl: '.swiper-menu-button-prev',
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 3 // От 768px и выше
+      },
+      1200: {
+        slidesPerView: 4 // От 768px и выше
+      },
+      1400: {
+        slidesPerView: 5 // От 768px и выше
+      }
     },
     on: {
       init: function () {
@@ -234,6 +246,7 @@
       },
     },
   });
+
 
 
   // Яндекс карта

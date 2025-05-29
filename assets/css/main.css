@@ -420,24 +420,6 @@ h6 {
       transform 0.15s ease-in 0.15s;
   }
 
-@media (min-width: 450px) { 
-  /* burger-menu */
-    .menu-burger-wrapper {
-      height: 22px;
-      width: 30px;
-    }
-    .menu-burger {
-      width: 30px;
-    }
-    .menu-burger::before {
-      width: 30px;
-      top: -8px;
-    }
-    .menu-burger::after {
-      width: 30px;
-      top: 8px;
-    }
-}
 
 @media (min-width: 1200px) {
   .menu-burger-wrapper{
@@ -736,8 +718,8 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 35px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
   font-size: 16px;
@@ -1275,6 +1257,7 @@ section,
   list-style: none;
   text-align: center;
   border-radius: 50px;
+  align-items: center;
 }
 
 .menu .menu-filters li {
@@ -1372,6 +1355,7 @@ section,
 /* Кнопки стрелок */
 .swiper-menu-button-next,
 .swiper-menu-button-prev {
+  display: none;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -1380,7 +1364,6 @@ section,
   height: 50px;
   background-color: var(--accent-color);
   border-radius: 50%;
-  display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -1396,7 +1379,22 @@ section,
   right: -20px;
 }
 
+.swiper-menu-paggination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
 
+.swiper-menu-paggination > .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px; 
+  background-color: var(--default-color);
+}
+
+.swiper-menu-paggination > .swiper-pagination-bullet-active {
+  background-color: var( --accent-color);
+}
 
 .menu .menu-item {
   margin-top: 50px;
@@ -1515,9 +1513,16 @@ section,
     border: 0;
     padding: 15px;
   }
-
   .specials .nav-link.active {
     background: var(--accent-color);
+  }
+}
+@media (min-width: 992px) {
+  .swiper-menu-button-next {
+  left: 0px;
+  }
+  .swiper-menu-button-prev {
+    right: 0px;
   }
 }
 
@@ -1627,15 +1632,15 @@ section,
   background: color-mix(in srgb, var(--default-color), transparent 97%);
 }
 
-.book-a-table .php-email-form {
+/* .book-a-table .php-email-form {
   padding: 30px;
-}
+} */
 
-@media (max-width: 575px) {
+/* @media (max-width: 575px) {
   .book-a-table .php-email-form {
     padding: 20px;
   }
-}
+} */
 
 .book-a-table .php-email-form input[type=text],
 .book-a-table .php-email-form input[type=email],
@@ -1674,7 +1679,7 @@ section,
   color: var(--default-color);
   border: 2px solid var(--accent-color);
   background: transparent;
-  padding: 14px 60px;
+  padding: 8px 36px;
   transition: 0.4s;
   border-radius: 50px;
 }
@@ -1969,4 +1974,85 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
+}
+@media (min-width: 360px) { 
+  .book-a-table .php-email-form button[type=submit] {
+    padding: 14px 60px;
+  }
+  .footer .social-links a {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (min-width: 450px) { 
+  /* burger-menu */
+    .menu-burger-wrapper {
+      height: 22px;
+      width: 30px;
+    }
+    .menu-burger {
+      width: 30px;
+    }
+    .menu-burger::before {
+      width: 30px;
+      top: -8px;
+    }
+    .menu-burger::after {
+      width: 30px;
+      top: 8px;
+    }
+    .footer .social-links a {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+@media (min-width: 600px) { 
+    .swiper-menu-button-next,
+    .swiper-menu-button-prev {
+      display: flex;
+    }
+    .swiper-menu-paggination {
+      display: none;
+    }
+    .footer .social-links a {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (min-width: 768px) { 
+    .footer .social-links a {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (min-width: 992px) { 
+    .footer .social-links a {
+        width: 25px;
+        height: 25px;
+    }
+}
+@media (min-width: 1200px) { 
+    .footer .social-links a {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+
+@media (min-width: 1400px) { 
+ .swiper-menu-button-next {
+  left: -20px;
+  }
+  .swiper-menu-button-prev {
+    right: -20px;
+  }
+  .footer .social-links a {
+    width: 35px;
+    height: 35px;
+  }
 }
