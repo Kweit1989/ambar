@@ -42,15 +42,22 @@
   <header id="header" class="header fixed-top">
 
     <div class="topbar d-flex align-items-center">
-      <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="container d-flex justify-content-md-between topbar-row">
         <div class="contact-info d-flex align-items-center">
           <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">ambar@bk.ru</a></i>
-          <i class="bi bi-phone d-flex align-items-center ms-4"><a href="tel:+79603604732">+7 (8422) 96-55-66</a></i>
+          <i class="bi bi-phone d-flex align-items-center"><a href="tel:+79603604732">+7 (8422) 96-55-66</a></i>
         </div>
-        <div class="languages d-none d-md-flex align-items-center">
+        <div class="languages d-md-flex align-items-center">
           <ul>
-            <li>Ru</li>
-            <li><a href="#">En</a></li>
+            <li class="language-active">
+              Ru
+            </li>
+            <li>
+              /
+            </li>
+            <li>
+              En
+            </li>
           </ul>
         </div>
       </div>
@@ -64,7 +71,7 @@
           <!-- <img src="assets/img/logo.png" alt=""> -->
           <h1 class="sitename">AMBAR</h1>
         </a>
-
+     
         <nav id="navmenu" class="navmenu">
           <ul id="navmenu-ul">
             <li><a href="#hero" class="active">Главная<br></a></li>
@@ -99,10 +106,24 @@
           <span>Забронировать стол</span>
         </a>
 
+        <div class="cart-account-burger">
+          <button class="account">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="#cda45e" viewBox="32 32 192 192">
+              <path d="M152,80a8,8,0,0,1,8-8h88a8,8,0,0,1,0,16H160A8,8,0,0,1,152,80Zm96,40H160a8,8,0,0,0,0,16h88a8,8,0,0,0,0-16Zm0,48H184a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16Zm-96.25,22a8,8,0,0,1-5.76,9.74,7.55,7.55,0,0,1-2,.26,8,8,0,0,1-7.75-6c-6.16-23.94-30.34-42-56.25-42s-50.09,18.05-56.25,42a8,8,0,0,1-15.5-4c5.59-21.71,21.84-39.29,42.46-48a48,48,0,1,1,58.58,0C129.91,150.71,146.16,168.29,151.75,190ZM80,136a32,32,0,1,0-32-32A32,32,0,0,0,80,136Z" />
+            </svg>
+          </button>
+          <a class="cart" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="#cda45e" viewBox="16 32 224 192">
+              <path d="M136,120v56a8,8,0,0,1-16,0V120a8,8,0,0,1,16,0Zm36.84-.8-5.6,56A8,8,0,0,0,174.4,184a7.32,7.32,0,0,0,.81,0,8,8,0,0,0,7.95-7.2l5.6-56a8,8,0,0,0-15.92-1.6Zm-89.68,0a8,8,0,0,0-15.92,1.6l5.6,56a8,8,0,0,0,8,7.2,7.32,7.32,0,0,0,.81,0,8,8,0,0,0,7.16-8.76ZM239.93,89.06,224.86,202.12A16.06,16.06,0,0,1,209,216H47a16.06,16.06,0,0,1-15.86-13.88L16.07,89.06A8,8,0,0,1,24,80H68.37L122,18.73a8,8,0,0,1,12,0L187.63,80H232a8,8,0,0,1,7.93,9.06ZM89.63,80h76.74L128,36.15ZM222.86,96H33.14L47,200H209Z"></path>
+            </svg>
+          </a>
+          <div class="menu-burger-wrapper">
+            <div class="menu-burger"></div>
+          </div>
+        </div>
+
       </div>
-      <div class="menu-burger-wrapper">
-          <div class="menu-burger"></div>
-      </div>
+      
     </div>
 
   </header>
@@ -1102,6 +1123,57 @@
 
   <!-- Preloader -->
   <div id="preloader"></div>
+
+
+  <!-- Modar auth -->
+
+
+  <div class="auth-modal-container">
+    <div class="auth-modal">
+      <div class="auth-modal-wrapper">
+        <h5 class="auth-modal-title">Вход</h5>
+        <svg class="auth-modal-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#cda45e" viewBox="0 0 256 256">
+          <path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V48H208V208ZM165.66,101.66,139.31,128l26.35,26.34a8,8,0,0,1-11.32,11.32L128,139.31l-26.34,26.35a8,8,0,0,1-11.32-11.32L116.69,128,90.34,101.66a8,8,0,0,1,11.32-11.32L128,116.69l26.34-26.35a8,8,0,0,1,11.32,11.32Z"></path>
+        </svg>
+      </div>
+      <form action="#" class="auth-modal-form" >
+        <input class="auth-modal-tel" type="tel" placeholder="Введите номер телефона">
+        <input class="auth-modal-pass" type="password" placeholder="Введите пароль">
+        <button class="auth-modal-in" type="submit">Войти</button>
+        <button class="auth-modal-reg">Регистрация</button>
+      </form>
+    </div>
+  </div>
+ 
+  <div class="reg-modal-container">
+    <div class="reg-modal">
+      <div class="reg-modal-wrapper">
+        <h5 class="reg-modal-title">Регистрация</h5>
+      <svg class="auth-modal-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#cda45e" viewBox="0 0 256 256">
+        <path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V48H208V208ZM165.66,101.66,139.31,128l26.35,26.34a8,8,0,0,1-11.32,11.32L128,139.31l-26.34,26.35a8,8,0,0,1-11.32-11.32L116.69,128,90.34,101.66a8,8,0,0,1,11.32-11.32L128,116.69l26.34-26.35a8,8,0,0,1,11.32,11.32Z"></path>
+      </svg>
+      </div>
+      <form action="#" class="reg-modal-form" >
+        <input class="reg-modal-name" type="text" placeholder="Введите имя">
+        <input class="reg-modal-last-name" type="text" placeholder="Введите фамилию">
+        <input class="reg-modal-tel" type="tel" placeholder="Введите номер телефона">
+        <input class="reg-modal-pass" type="password" placeholder="Введите пароль">
+        <input class="reg-modal-pass" type="password" placeholder="Введите пароль повторно">
+        <label  class="reg-modal-label">
+          <input class="reg-modal-check" type="checkbox" required>
+          <div>
+            Я согласен с <a href="/privacy" target="_blank">политикой конфиденциальности</a> и <a href="/terms" target="_blank">пользовательским соглашением</a>
+          </div>
+        </label>
+        <button class="reg-modal-in" type="submit">Зарагестрироваться</button>
+        <svg class="reg-modal-back" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#cda45e" viewBox="0 0 256 256">
+          <path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V48H208ZM82.34,133.66a8,8,0,0,1,0-11.32l32-32a8,8,0,0,1,11.32,11.32L107.31,120H168a8,8,0,0,1,0,16H107.31l18.35,18.34a8,8,0,0,1-11.32,11.32Z"></path>
+      </svg>
+      </form>
+    </div>
+  </div>
+
+
 
   <!-- Vendor JS Files -->
   <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=5e179056-2391-4e15-8915-d8b9b971ae59" type="text/javascript"></script>

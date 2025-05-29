@@ -324,5 +324,67 @@
     })
   })
 
+
+
+  // Переключение модальных окн
+  // Вход
+  const buttonAccount = document.querySelector('.account');
+  const authModal = document.querySelector('.auth-modal-container');
+  const authModalClose = document.querySelectorAll('.auth-modal-close');
+
+  // Регистрация
+  const buttonReg = document.querySelector('.auth-modal-reg');
+  const regModal = document.querySelector('.reg-modal-container');
+  const regModalBack = document.querySelector('.reg-modal-back');
+ 
+  buttonAccount.addEventListener('click', function (event) {
+    event.stopPropagation(); // Чтобы клик по кнопке не закрывал модалку
+    if (authModal.classList.contains('active')) {
+      authModal.classList.remove('active');
+      document.body.style.overflow = '';
+    } else {
+      authModal.classList.add('active')
+      document.body.style.overflow = 'hidden';
+    }
+  });
+
+
+  // Закрытие при клике вне модалки, вне кнопки и при клике на крестик
+  document.addEventListener('click', function (event) {
+    let clickedCloseButton = false;
+
+    // Проверим, кликнули ли по одному из крестиков
+    authModalClose.forEach(button => {
+      if (button.contains(event.target)) {
+        clickedCloseButton = true;
+      }
+    });
+
+    if (clickedCloseButton) {
+      authModal.classList.remove('active');
+      regModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+  
+  buttonReg.addEventListener('click', function(event){
+    event.preventDefault(); // <--- это остановит скролл вверх
+    if (authModal.classList.contains('active')){
+      authModal.classList.remove('active');
+      setTimeout(() => {
+        regModal.classList.add('active');
+      }, 300);
+    }
+  });
+
+
+  regModalBack.addEventListener('click', function(){
+      regModal.classList.remove('active');
+      setTimeout(() => {
+        authModal.classList.add('active');
+      }, 300);
+  })
+
+
 })();
 
