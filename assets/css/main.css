@@ -2051,20 +2051,18 @@ section,
   padding: 20px;
   border: 1px solid var(--accent-color);
   transform: translate(-50%, -50%);
-  width: 300px;
-  height: 320px;
-  background-color: rgb(12, 11, 9, 0.95);
+  width: calc(100% - 20px); /* 100% ширины минус по 10px с каждой стороны */
+  max-width: 1200px; /* или сколько тебе нужно */
+  min-width: 300px;  /* минимальная ширина */
+  height: 340px;
+  background-color: rgba(12, 11, 9, 0.95); /* лучше использовать rgba вместо rgb с альфой */
 }
-.auth-modal-wrapper,
-.reg-modal-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 30px;
-}
+
 .auth-modal-close {
+  display: block;
   margin-left: auto;
 }
+
 .menu-burger-container  .menu-burger,
 .menu-burger-container  .menu-burger::after,
 .menu-burger-container  .menu-burger::before {
@@ -2078,19 +2076,16 @@ section,
   top: -4px;
 }
 .reg-modal {
-  height: 525px;
+  height: 545px;
 }
 .auth-modal-container.active,
 .reg-modal-container.active {
    right: 0%;
 }
-.auth-modal-title{
+.auth-modal-title,
+.reg-modal-title{
   text-align: center;
-  margin: 0 0 5px 40%;
-}
-.reg-modal-title {
-  text-align: center;
-  margin: 0 0 5px 25%;
+  margin: 0 auto 30px auto;
 }
 .auth-modal-form,
 .reg-modal-form {
@@ -2174,6 +2169,24 @@ section,
         width: 40px;
         height: 40px;
     }
+    /* Modal window */
+    .auth-modal,
+    .reg-modal {
+      width: calc(100% - 40px); /* 100% ширины минус по 10px с каждой стороны */
+      height: 400px;
+    
+    }
+    .reg-modal {
+      height: 605px;
+    }
+    .auth-modal-title,
+    .reg-modal-title {
+      font-size: 24px;
+    }
+    .auth-modal-form,
+    .reg-modal-form {
+      padding: 20px 40px;
+    }
 }
 
 
@@ -2189,12 +2202,32 @@ section,
         width: 50px;
         height: 50px;
     }
+    /* Modal window */
+    .auth-modal,
+    .reg-modal {
+      width: calc(100% - 100px); /* 100% ширины минус по 10px с каждой стороны */
+      height: 420px;
+    }
+    .reg-modal {
+      height: 650px;
+    }
+    .auth-modal-form > input, .reg-modal-form > input { 
+      padding: 10px 15px;
+    }
+    .auth-modal-in, .reg-modal-in {
+      padding: 10px 15px;
+    }
 }
 
 @media (min-width: 768px) { 
     .footer .social-links a {
         width: 30px;
         height: 30px;
+    }
+    /* Modal window */
+    .auth-modal,
+    .reg-modal {
+      width: calc(100% - 150px); /* 100% ширины минус по 10px с каждой стороны */
     }
 }
 
@@ -2203,11 +2236,21 @@ section,
         width: 25px;
         height: 25px;
     }
+    /* Modal window */
+    .auth-modal,
+    .reg-modal {
+      width: calc(100% - 200px); /* 100% ширины минус по 10px с каждой стороны */
+    }
 }
 @media (min-width: 1200px) { 
     .footer .social-links a {
         width: 30px;
         height: 30px;
+    }
+    /* Modal window */
+    .auth-modal,
+    .reg-modal {
+      width: calc(100% - 250px); /* 100% ширины минус по 10px с каждой стороны */
     }
 }
 
@@ -2223,4 +2266,9 @@ section,
     width: 35px;
     height: 35px;
   }
+  /* Modal window */
+    .auth-modal,
+    .reg-modal {
+      width: calc(100% - 300px); /* 100% ширины минус по 10px с каждой стороны */
+    }
 }
