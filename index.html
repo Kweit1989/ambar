@@ -112,11 +112,11 @@
               <path d="M152,80a8,8,0,0,1,8-8h88a8,8,0,0,1,0,16H160A8,8,0,0,1,152,80Zm96,40H160a8,8,0,0,0,0,16h88a8,8,0,0,0,0-16Zm0,48H184a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16Zm-96.25,22a8,8,0,0,1-5.76,9.74,7.55,7.55,0,0,1-2,.26,8,8,0,0,1-7.75-6c-6.16-23.94-30.34-42-56.25-42s-50.09,18.05-56.25,42a8,8,0,0,1-15.5-4c5.59-21.71,21.84-39.29,42.46-48a48,48,0,1,1,58.58,0C129.91,150.71,146.16,168.29,151.75,190ZM80,136a32,32,0,1,0-32-32A32,32,0,0,0,80,136Z" />
             </svg>
           </button>
-          <a class="cart" href="#">
+          <button class="cart">
             <svg xmlns="http://www.w3.org/2000/svg" fill="#cda45e" viewBox="16 32 224 192">
               <path d="M136,120v56a8,8,0,0,1-16,0V120a8,8,0,0,1,16,0Zm36.84-.8-5.6,56A8,8,0,0,0,174.4,184a7.32,7.32,0,0,0,.81,0,8,8,0,0,0,7.95-7.2l5.6-56a8,8,0,0,0-15.92-1.6Zm-89.68,0a8,8,0,0,0-15.92,1.6l5.6,56a8,8,0,0,0,8,7.2,7.32,7.32,0,0,0,.81,0,8,8,0,0,0,7.16-8.76ZM239.93,89.06,224.86,202.12A16.06,16.06,0,0,1,209,216H47a16.06,16.06,0,0,1-15.86-13.88L16.07,89.06A8,8,0,0,1,24,80H68.37L122,18.73a8,8,0,0,1,12,0L187.63,80H232a8,8,0,0,1,7.93,9.06ZM89.63,80h76.74L128,36.15ZM222.86,96H33.14L47,200H209Z"></path>
             </svg>
-          </a>
+          </button>
           <div class="menu-burger-wrapper">
             <div class="menu-burger"></div>
           </div>
@@ -268,138 +268,223 @@
           <div class="swiper-menu-paggination"></div>
         </div><!-- Menu Filters -->
 
-        <div class="row isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-
-
+        <div class="row isotope-container food-list" data-aos="fade-up" data-aos-delay="200">
 
           <!-- Закуски -->
           <div class="col-lg-6 menu-item isotope-item filter-starters">
-            <img src="assets/img/menu/starters_1.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="#">Куриные крылышки в соусе BBQ</a><span>₽ 359</span>
-            </div>
-            <div class="menu-ingredients">
-              Куриные крылья, соус BBQ
+            <div class="wrapper-food" data-id="123" data-name="Куриные крылышки в соусе BBQ" data-price="359">
+              <div class="wrapper-img-add">
+                <img class="food-img" src="assets/img/menu/starters_1.jpg" alt="">
+                <span class="food-price">₽ 359</span>
+              </div>
+              <div class="wrapper-discription-food">
+                <div class="food-card">
+                  <a class="food-detail-link" href="#">Куриные крылышки в соусе BBQ</a>
+                </div>
+                <div class="food-ingredients">
+                  Куриные крылья, соус BBQ
+                </div>
+                <button class="food-add-cart">В корзину</button>
+              </div>
             </div>
           </div><!-- Menu Item -->
 
 
           <!-- Холодные закуски -->
           <div class="col-lg-6 menu-item isotope-item filter-starters_cold">
-            <img src="assets/img/menu/starters_1.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="#">Ассорти мясное</a><span>₽ 409</span>
-            </div>
-            <div class="menu-ingredients">
-              Мясо
+           <div class="wrapper-food" data-id="123" data-name="Куриные крылышки в соусе BBQ" data-price="359">
+              <div class="wrapper-img-add">
+                <img class="food-img" src="assets/img/menu/starters_1.jpg" alt="">
+                <span class="food-price">₽ 409</span>
+              </div>
+              <div class="wrapper-discription-food">
+                <div class="food-card">
+                  <a class="food-detail-link" href="#">Ассорти мясное</a>
+                </div>
+                <div class="food-ingredients">
+                  Мясо баранины, говядины, курицы
+                </div>
+                <button class="food-add-cart">В корзину</button>
+              </div>
             </div>
           </div><!-- Menu Item -->
       
 
           <!-- Супы -->
           <div class="col-lg-6 menu-item isotope-item filter-soup">
-            <img src="assets/img/menu/bread-barrel.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="#">Bread Barrel</a><span>$6.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Lorem, deren, trataro, filede, nerada
+           <div class="wrapper-food" data-id="123" data-name="Куриные крылышки в соусе BBQ" data-price="359">
+              <div class="wrapper-img-add">
+                <img class="food-img" src="assets/img/menu/starters_1.jpg" alt="">
+                <span class="food-price">₽ 359</span>
+              </div>
+              <div class="wrapper-discription-food">
+                <div class="food-card">
+                  <a class="food-detail-link" href="#">Куриные крылышки в соусе BBQ</a>
+                </div>
+                <div class="food-ingredients">
+                  Куриные крылья, соус BBQ
+                </div>
+                <button class="food-add-cart">В корзину</button>
+              </div>
             </div>
           </div><!-- Menu Item -->
 
 
           <!-- Горячие закуски -->
           <div class="col-lg-6 menu-item isotope-item filter-starters_hot">
-            <img src="assets/img/menu/caesar.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="#">Caesar Selections</a><span>$8.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Lorem, deren, trataro, filede, nerada
+           <div class="wrapper-food" data-id="123" data-name="Куриные крылышки в соусе BBQ" data-price="359">
+              <div class="wrapper-img-add">
+                <img class="food-img" src="assets/img/menu/starters_1.jpg" alt="">
+                <span class="food-price">₽ 359</span>
+              </div>
+              <div class="wrapper-discription-food">
+                <div class="food-card">
+                  <a class="food-detail-link" href="#">Куриные крылышки в соусе BBQ</a>
+                </div>
+                <div class="food-ingredients">
+                  Куриные крылья, соус BBQ
+                </div>
+                <button class="food-add-cart">В корзину</button>
+              </div>
             </div>
           </div><!-- Menu Item -->
 
 
           <!-- Сеты роллы -->
           <div class="col-lg-6 menu-item isotope-item filter-rolls_set">
-            <img src="assets/img/menu/tuscan-grilled.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="#">Tuscan Grilled</a><span>$9.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Grilled chicken with provolone, artichoke hearts, and roasted red pesto
+            <div class="wrapper-food" data-id="123" data-name="Куриные крылышки в соусе BBQ" data-price="359">
+              <div class="wrapper-img-add">
+                <img class="food-img" src="assets/img/menu/starters_1.jpg" alt="">
+                <span class="food-price">₽ 359</span>
+              </div>
+              <div class="wrapper-discription-food">
+                <div class="food-card">
+                  <a class="food-detail-link" href="#">Куриные крылышки в соусе BBQ</a>
+                </div>
+                <div class="food-ingredients">
+                  Куриные крылья, соус BBQ
+                </div>
+                <button class="food-add-cart">В корзину</button>
+              </div>
             </div>
           </div><!-- Menu Item -->
 
           
           <!-- Оригинальные роллы  -->
           <div class="col-lg-6 menu-item isotope-item filter-rolls_original">
-            <img src="assets/img/menu/greek-salad.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="#">Greek Salad</a><span>$9.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Fresh spinach, crisp romaine, tomatoes, and Greek olives
+           <div class="wrapper-food" data-id="123" data-name="Куриные крылышки в соусе BBQ" data-price="359">
+              <div class="wrapper-img-add">
+                <img class="food-img" src="assets/img/menu/starters_1.jpg" alt="">
+                <span class="food-price">₽ 359</span>
+              </div>
+              <div class="wrapper-discription-food">
+                <div class="food-card">
+                  <a class="food-detail-link" href="#">Куриные крылышки в соусе BBQ</a>
+                </div>
+                <div class="food-ingredients">
+                  Куриные крылья, соус BBQ
+                </div>
+                <button class="food-add-cart">В корзину</button>
+              </div>
             </div>
           </div><!-- Menu Item -->
 
           
           <!-- Горячие роллы  -->
           <div class="col-lg-6 menu-item isotope-item filter-rolls_hot">
-            <img src="assets/img/menu/greek-salad.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="#">Greek Salad</a><span>$9.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Fresh spinach, crisp romaine, tomatoes, and Greek olives
+           <div class="wrapper-food" data-id="123" data-name="Куриные крылышки в соусе BBQ" data-price="359">
+              <div class="wrapper-img-add">
+                <img class="food-img" src="assets/img/menu/starters_1.jpg" alt="">
+                <span class="food-price">₽ 359</span>
+              </div>
+              <div class="wrapper-discription-food">
+                <div class="food-card">
+                  <a class="food-detail-link" href="#">Куриные крылышки в соусе BBQ</a>
+                </div>
+                <div class="food-ingredients">
+                  Куриные крылья, соус BBQ
+                </div>
+                <button class="food-add-cart">В корзину</button>
+              </div>
             </div>
           </div><!-- Menu Item -->
 
 
           <!-- Салаты -->
           <div class="col-lg-6 menu-item isotope-item filter-salads">
-            <img src="assets/img/menu/spinach-salad.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="#">Spinach Salad</a><span>$9.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Fresh spinach with mushrooms, hard boiled egg, and warm bacon vinaigrette
+           <div class="wrapper-food" data-id="123" data-name="Куриные крылышки в соусе BBQ" data-price="359">
+              <div class="wrapper-img-add">
+                <img class="food-img" src="assets/img/menu/starters_1.jpg" alt="">
+                <span class="food-price">₽ 359</span>
+              </div>
+              <div class="wrapper-discription-food">
+                <div class="food-card">
+                  <a class="food-detail-link" href="#">Куриные крылышки в соусе BBQ</a>
+                </div>
+                <div class="food-ingredients">
+                  Куриные крылья, соус BBQ
+                </div>
+                <button class="food-add-cart">В корзину</button>
+              </div>
             </div>
           </div><!-- Menu Item -->
           
 
           <!-- Шашлыки -->
           <div class="col-lg-6 menu-item isotope-item filter-fried_meat">
-            <img src="assets/img/menu/greek-salad.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="#">Greek Salad</a><span>$9.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Fresh spinach, crisp romaine, tomatoes, and Greek olives
+           <div class="wrapper-food" data-id="123" data-name="Куриные крылышки в соусе BBQ" data-price="359">
+              <div class="wrapper-img-add">
+                <img class="food-img" src="assets/img/menu/starters_1.jpg" alt="">
+                <span class="food-price">₽ 359</span>
+              </div>
+              <div class="wrapper-discription-food">
+                <div class="food-card">
+                  <a class="food-detail-link" href="#">Куриные крылышки в соусе BBQ</a>
+                </div>
+                <div class="food-ingredients">
+                  Куриные крылья, соус BBQ
+                </div>
+                <button class="food-add-cart">В корзину</button>
+              </div>
             </div>
           </div><!-- Menu Item -->
 
 
           <!-- Напитки -->
           <div class="col-lg-6 menu-item isotope-item filter-drinks">
-            <img src="assets/img/menu/greek-salad.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="#">Greek Salad</a><span>$9.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Fresh spinach, crisp romaine, tomatoes, and Greek olives
+           <div class="wrapper-food" data-id="123" data-name="Куриные крылышки в соусе BBQ" data-price="359">
+              <div class="wrapper-img-add">
+                <img class="food-img" src="assets/img/menu/starters_1.jpg" alt="">
+                <span class="food-price">₽ 359</span>
+              </div>
+              <div class="wrapper-discription-food">
+                <div class="food-card">
+                  <a class="food-detail-link" href="#">Куриные крылышки в соусе BBQ</a>
+                </div>
+                <div class="food-ingredients">
+                  Куриные крылья, соус BBQ
+                </div>
+                <button class="food-add-cart">В корзину</button>
+              </div>
             </div>
           </div><!-- Menu Item -->
 
 
           <div class="col-lg-6 menu-item isotope-item filter-specialty">
-            <img src="assets/img/menu/lobster-roll.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="#">Lobster Roll</a><span>$12.95</span>
-            </div>
-            <div class="menu-ingredients">
-              Plump lobster meat, mayo and crisp lettuce on a toasted bulky roll
+           <div class="wrapper-food" data-id="123" data-name="Куриные крылышки в соусе BBQ" data-price="359">
+              <div class="wrapper-img-add">
+                <img class="food-img" src="assets/img/menu/starters_1.jpg" alt="">
+                <span class="food-price">₽ 359</span>
+              </div>
+              <div class="wrapper-discription-food">
+                <div class="food-card">
+                  <a class="food-detail-link" href="#">Куриные крылышки в соусе BBQ</a>
+                </div>
+                <div class="food-ingredients">
+                  Куриные крылья, соус BBQ
+                </div>
+                <button class="food-add-cart">В корзину</button>
+              </div>
             </div>
           </div><!-- Menu Item -->
 
@@ -1125,13 +1210,11 @@
   <div id="preloader"></div>
 
 
-  <!-- Modar auth -->
-
-
+  <!-- Modal auth -->
   <div class="auth-modal-container">
     <div class="auth-modal">
       <div class="auth-modal-svg">
-        <svg class="auth-modal-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#cda45e" viewBox="0 0 256 256">
+        <svg class="auth-modal-close" xmlns="http://www.w3.org/2000/svg" fill="#cda45e" viewBox="0 0 256 256">
             <path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V48H208V208ZM165.66,101.66,139.31,128l26.35,26.34a8,8,0,0,1-11.32,11.32L128,139.31l-26.34,26.35a8,8,0,0,1-11.32-11.32L116.69,128,90.34,101.66a8,8,0,0,1,11.32-11.32L128,116.69l26.34-26.35a8,8,0,0,1,11.32,11.32Z"></path>
         </svg>
       </div>
@@ -1145,10 +1228,11 @@
     </div>
   </div>
  
+  <!-- Modal reg -->
   <div class="reg-modal-container">
     <div class="reg-modal">
       <div class="reg-modal-svg">
-        <svg class="auth-modal-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#cda45e" viewBox="0 0 256 256">
+        <svg class="auth-modal-close" xmlns="http://www.w3.org/2000/svg" fill="#cda45e" viewBox="0 0 256 256">
           <path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V48H208V208ZM165.66,101.66,139.31,128l26.35,26.34a8,8,0,0,1-11.32,11.32L128,139.31l-26.34,26.35a8,8,0,0,1-11.32-11.32L116.69,128,90.34,101.66a8,8,0,0,1,11.32-11.32L128,116.69l26.34-26.35a8,8,0,0,1,11.32,11.32Z"></path>
         </svg>
       </div>
@@ -1166,10 +1250,90 @@
           </div>
         </label>
         <button class="reg-modal-in" type="submit">Зарагестрироваться</button>
-        <svg class="reg-modal-back" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#cda45e" viewBox="0 0 256 256">
-          <path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V48H208ZM82.34,133.66a8,8,0,0,1,0-11.32l32-32a8,8,0,0,1,11.32,11.32L107.31,120H168a8,8,0,0,1,0,16H107.31l18.35,18.34a8,8,0,0,1-11.32,11.32Z"></path>
-      </svg>
       </form>
+      <svg class="reg-modal-back" xmlns="http://www.w3.org/2000/svg" fill="#cda45e" viewBox="0 0 256 256">
+        <path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V48H208ZM82.34,133.66a8,8,0,0,1,0-11.32l32-32a8,8,0,0,1,11.32,11.32L107.31,120H168a8,8,0,0,1,0,16H107.31l18.35,18.34a8,8,0,0,1-11.32,11.32Z"></path>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Modal cart -->
+  <div class="cart-modal-container">
+    <div class="cart-modal">
+       <div class="auth-modal-svg">
+        <svg class="auth-modal-close" xmlns="http://www.w3.org/2000/svg" fill="#cda45e" viewBox="0 0 256 256">
+            <path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V48H208V208ZM165.66,101.66,139.31,128l26.35,26.34a8,8,0,0,1-11.32,11.32L128,139.31l-26.34,26.35a8,8,0,0,1-11.32-11.32L116.69,128,90.34,101.66a8,8,0,0,1,11.32-11.32L128,116.69l26.34-26.35a8,8,0,0,1,11.32,11.32Z"></path>
+        </svg>
+        <h5 class="cart-modal-title">Корзина</h5>
+        <div class="cart-modal-row">
+          <div class="cart-modal-card">
+            <div class="cart-modal-description-card">
+              <div class="cart-img-add">
+                <img class="cart-img" src="assets/img/menu/starters_1.jpg" alt="">
+                <span class="cart-price">₽ 359</span>
+              </div>
+              <div class="cart-discription-food">
+                <div class="cart-card">
+                  <a class="cart-detail-link" href="#">Куриные крылышки в соусе BBQ</a>
+                </div>
+                <div class="cart-ingredients">
+                  Куриные крылья, соус BBQ
+                </div>
+              </div>
+            </div>
+            <div class="cart-modal-btn">
+              <button class="cart-modal-plus">+</button>
+              <input class="cart-modal-count" type="number">
+              <button class="cart-modal-minus">-</button>
+              <button class="cart-modal-delete">Удалить</button>
+            </div>
+          </div>
+          <div class="cart-modal-card">
+            <div class="cart-modal-description-card">
+              <div class="cart-img-add">
+                <img class="cart-img" src="assets/img/menu/starters_1.jpg" alt="">
+                <span class="cart-price">₽ 359</span>
+              </div>
+              <div class="cart-discription-food">
+                <div class="cart-card">
+                  <a class="cart-detail-link" href="#">Куриные крылышки в соусе BBQ</a>
+                </div>
+                <div class="cart-ingredients">
+                  Куриные крылья, соус BBQ
+                </div>
+              </div>
+            </div>
+            <div class="cart-modal-btn">
+              <button class="cart-modal-plus">+</button>
+              <input class="cart-modal-count" type="number">
+              <button class="cart-modal-minus">-</button>
+              <button class="cart-modal-delete">Удалить</button>
+            </div>
+          </div>
+          <div class="cart-modal-card">
+            <div class="cart-modal-description-card">
+              <div class="cart-img-add">
+                <img class="cart-img" src="assets/img/menu/starters_1.jpg" alt="">
+                <span class="cart-price">₽ 359</span>
+              </div>
+              <div class="cart-discription-food">
+                <div class="cart-card">
+                  <a class="cart-detail-link" href="#">Куриные крылышки в соусе BBQ</a>
+                </div>
+                <div class="cart-ingredients">
+                  Куриные крылья, соус BBQ
+                </div>
+              </div>
+            </div>
+            <div class="cart-modal-btn">
+              <button class="cart-modal-plus">+</button>
+              <input class="cart-modal-count" type="number">
+              <button class="cart-modal-minus">-</button>
+              <button class="cart-modal-delete">Удалить</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 

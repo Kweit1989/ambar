@@ -110,8 +110,8 @@
     let sort = isotopeItem.getAttribute('data-sort') ?? 'original-order';
 
     let initIsotope;
-    imagesLoaded(isotopeItem.querySelector('.isotope-container'), function() {
-      initIsotope = new Isotope(isotopeItem.querySelector('.isotope-container'), {
+    imagesLoaded(isotopeItem.querySelector('.food-list'), function() {
+      initIsotope = new Isotope(isotopeItem.querySelector('.food-list'), {
         itemSelector: '.isotope-item',
         layoutMode: layout,
         filter: filter,
@@ -383,6 +383,21 @@
       setTimeout(() => {
         authModal.classList.add('active');
       }, 300);
+  })
+
+
+  // Модальное окно корзины
+  const buttonCart = document.querySelector('.cart');
+  const cartModal = document.querySelector('.cart-modal-container');
+
+  buttonCart.addEventListener('click', function(){
+    if (cartModal.classList.contains('active')){
+      cartModal.classList.remove('active');
+      document.body.style.overflow = '';
+    } else {
+      cartModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
   })
 
 
