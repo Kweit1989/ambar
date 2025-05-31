@@ -412,7 +412,7 @@
   
  
   // Модальное окно столов
-  const table = document.getElementById('table');
+  const table = document.getElementById('tables');
   const tableModal = document.querySelector('.table-modal-container');
   
   const closeModal = document.querySelector('.table-modal-close');
@@ -448,6 +448,19 @@
           floorTwo.style.display = 'flex'
       }
   })
+
+  // Выбор стола
+  document.querySelectorAll('.table-option').forEach(item => {
+  item.addEventListener('click', function() {
+    const tableName = this.dataset.table;
+    document.getElementById('tables').value = tableName;
+
+    // Закрываем модальное окно (если нужно)
+    tableModal.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+});
+
 
 
 })();

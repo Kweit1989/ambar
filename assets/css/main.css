@@ -430,6 +430,7 @@ textarea:-webkit-autofill:hover {
     cursor: pointer;
     width: 24px;
     height: 18px;
+    margin-top: 3px;
   }
   .menu-burger {
     position: relative;
@@ -2339,16 +2340,14 @@ input[type="checkbox"]:checked::after {
   margin-bottom: 30px;
 }
 
-.floor-one > .table-modal-table {
-  background-color: #059652;
-}
-
 .table-modal-table {
   width: 100px;
   height: 100px;
-  background-color: #e00000;
 }
-
+.table-modal-table > img {
+  width: 100%;
+  height: 100%;
+}
 
 .table-modal-chose {
   padding: 0;
