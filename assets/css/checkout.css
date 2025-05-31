@@ -117,3 +117,46 @@ input[type="radio"]:checked::after {
 .checkout-form-comment:focus{
     outline: none;
 }
+
+
+.table-modal-container{
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    padding: 20px 10px;
+    background-color: #242322;
+    transition: left 0.3s ease-in;
+    overflow-y: scroll;
+}
+.table-modal-container.active{
+    left: 0%;
+}
+
+.table-modal-container .container {
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+.table-modal-container form {
+    border: 1px solid var(--accent-color);
+    padding: 10px;
+    border-radius: 5px;
+}
+.table-modal-container form input,
+.table-modal-container textarea {
+    background-color: transparent;
+    color: var(--default-color);
+    border: 1px solid var(--accent-color);
+}
+.table-modal-container form input:focus,
+.table-modal-container textarea:focus{
+    background-color: transparent;
+    color: var(--default-color);
+    box-shadow: none;
+    border: 1px solid var(--accent-color);
+}
+.table-modal-container form input::placeholder,
+.table-modal-container textarea::placeholder {
+    color: var(--default-color);
+}

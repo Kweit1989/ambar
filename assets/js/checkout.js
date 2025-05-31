@@ -8,3 +8,20 @@ radio.addEventListener('change', () => {
     document.getElementById('pickup-point').style.display = val === 'pickup' ? 'grid' : 'none';
 });
 });
+
+
+// Выбор стола 
+const checkoutFormTable = document.querySelector('.checkout-form-table');
+const tableModel = document.querySelector('.table-modal-container');
+
+checkoutFormTable.addEventListener('click', function(){  
+    tableModel.classList.add('active');
+    document.body.style.overflow = 'hidden';
+})
+
+
+const closeModal = document.querySelector('.table-modal-close');
+closeModal.addEventListener('click', function(){
+    tableModel.classList.remove('active');
+    document.body.style.overflow = '';
+})

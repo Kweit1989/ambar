@@ -97,6 +97,18 @@ input[type="time"] {
   all: unset; 
 } */
 
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:hover {
+  box-shadow: 0 0 0px 1000px transparent inset !important;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  -webkit-text-fill-color: var(--default-color) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 
 /* PHP Email Form Messages
 ------------------------------*/
@@ -2134,7 +2146,8 @@ input[type="checkbox"]:checked::after {
 }
 
 .auth-modal-close,
-.cart-modal-close {
+.cart-modal-close,
+.table-modal-close {
   display: block;
   margin-left: auto;
   width: 24px;
@@ -2384,7 +2397,8 @@ input[type="checkbox"]:checked::after {
     }
     .auth-modal-close,
     .reg-modal-back,
-    .cart-modal-close {
+    .cart-modal-close,
+    .table-modal-close {
       width: 28px;
       height: 28px;
     }
@@ -2467,7 +2481,8 @@ input[type="checkbox"]:checked::after {
     }
     .auth-modal-close,
     .reg-modal-back,
-    .cart-modal-close {
+    .cart-modal-close,
+    .table-modal-close {
       width: 34px;
       height: 34px;
     }
