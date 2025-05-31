@@ -2322,7 +2322,7 @@ input[type="checkbox"]:checked::after {
   color: var(--heading-color);
   background-color: var(--accent-color);
 }
-.cart-modal-design:visited{
+.cart-modal-design:active{
   color: var(--heading-color);
 }
 .cart-modal-total {
