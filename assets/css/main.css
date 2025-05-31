@@ -2133,7 +2133,8 @@ input[type="checkbox"]:checked::after {
   background-color: rgba(12, 11, 9, 0.95); /* лучше использовать rgba вместо rgb с альфой */
 }
 
-.auth-modal-close {
+.auth-modal-close,
+.cart-modal-close {
   display: block;
   margin-left: auto;
   width: 24px;
@@ -2321,9 +2322,16 @@ input[type="checkbox"]:checked::after {
   color: var(--heading-color);
   background-color: var(--accent-color);
 }
-
 .cart-modal-design:visited{
   color: var(--heading-color);
+}
+.cart-modal-total {
+  padding: 5px 15px;
+  border: 1px solid var(--accent-color);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 @media (min-width: 360px) { 
@@ -2374,7 +2382,8 @@ input[type="checkbox"]:checked::after {
     
     }
     .auth-modal-close,
-    .reg-modal-back {
+    .reg-modal-back,
+    .cart-modal-close {
       width: 28px;
       height: 28px;
     }
@@ -2456,7 +2465,8 @@ input[type="checkbox"]:checked::after {
       height: 970px;
     }
     .auth-modal-close,
-    .reg-modal-back {
+    .reg-modal-back,
+    .cart-modal-close {
       width: 34px;
       height: 34px;
     }

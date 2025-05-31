@@ -400,6 +400,14 @@
     }
   })
 
+  const cartModalClose = document.querySelector('.cart-modal-close');
+  cartModalClose.addEventListener('click', function(){
+    if (cartModal.classList.contains('active')){
+      cartModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  })
+
 
 })();
 
