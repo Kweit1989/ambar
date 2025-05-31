@@ -712,15 +712,6 @@
         <form action="forms/book-a-table.php" method="post" role="form" class="php-email-form">
           <div class="row gy-4">
             <div class="col-lg-4 col-md-6">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Ваше имя" required="">
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Ваша почта" required="">
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <input type="text" class="form-control" name="phone" id="phone" placeholder="Ваш телефон" required="">
-            </div>
-            <div class="col-lg-4 col-md-6">
               <input type="date" name="date" class="form-control" id="date" placeholder="Date" required="">
             </div>
             <div class="col-lg-4 col-md-6">
@@ -729,12 +720,10 @@
             <div class="col-lg-4 col-md-6">
               <input type="number" class="form-control" name="people" id="people" placeholder="Количество персон" required="">
             </div>
+             <div class="col-lg-4 col-md-6">
+              <input type="text" class="form-control" name="people" id="table" placeholder="Выбирите стол" required="">
+            </div>
           </div>
-
-          <div class="form-group mt-3">
-            <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
-          </div>
-
           <div class="text-center mt-3">
             <div class="loading">Loading</div>
             <div class="error-message"></div>
@@ -1383,6 +1372,39 @@
           <a class="cart-modal-design" href="./checkout.html">Оформить заказ</a>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- Modal table -->
+  <div class="table-modal-container">
+    <div class="table-modal">
+      <div class="table-modal-svg">
+        <div class="table-modal-toggle">
+          <div class="table-modal-circly"></div>
+        </div>
+        <svg class="table-modal-close" xmlns="http://www.w3.org/2000/svg" fill="#cda45e" viewBox="0 0 256 256">
+            <path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V48H208V208ZM165.66,101.66,139.31,128l26.35,26.34a8,8,0,0,1-11.32,11.32L128,139.31l-26.34,26.35a8,8,0,0,1-11.32-11.32L116.69,128,90.34,101.66a8,8,0,0,1,11.32-11.32L128,116.69l26.34-26.35a8,8,0,0,1,11.32,11.32Z"></path>
+        </svg>
+      </div>
+      <h5 class="table-modal-title">Выбор стола</h5>
+      <span class="table-modal-floor">1 этаж</span>
+        <div class="table-modal-row floor-one">
+            <div class="table-modal-table"></div>
+            <div class="table-modal-table"></div>
+            <div class="table-modal-table"></div>
+            <div class="table-modal-table"></div>
+            <div class="table-modal-table"></div>
+            <div class="table-modal-table"></div>
+        </div>
+        <div class="table-modal-row floor-two" style="display: none;">
+            <div class="table-modal-table"></div>
+            <div class="table-modal-table"></div>
+            <div class="table-modal-table"></div>
+            <div class="table-modal-table"></div>
+            <div class="table-modal-table"></div>
+            <div class="table-modal-table"></div>
+        </div>
+        <button class="table-modal-chose">Выбрать</button>
     </div>
   </div>
 

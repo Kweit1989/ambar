@@ -409,5 +409,46 @@
   })
 
 
+  
+ 
+  // Модальное окно столов
+  const table = document.getElementById('table');
+  const tableModal = document.querySelector('.table-modal-container');
+  
+  const closeModal = document.querySelector('.table-modal-close');
+
+  table.addEventListener('click', function(){
+      tableModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+  })
+  closeModal.addEventListener('click', function(){
+      tableModal.classList.remove('active');
+      document.body.style.overflow = '';
+  })
+
+
+  // Переключатель этажей 
+  const modalToggle = document.querySelector('.table-modal-toggle');
+  const modalCircly = document.querySelector('.table-modal-circly');
+  const modalFloor = document.querySelector('.table-modal-floor');
+
+  const floorOne = document.querySelector('.floor-one');
+  const floorTwo = document.querySelector('.floor-two');
+
+  modalToggle.addEventListener('click', function () {
+      if (modalCircly.classList.contains('active')){
+          modalCircly.classList.remove('active');
+          modalFloor.textContent = "1 этаж";
+          floorOne.style.display = 'flex';
+          floorTwo.style.display = 'none'
+      } else {
+          modalCircly.classList.add('active');
+          modalFloor.textContent = "2 этаж";
+          floorOne.style.display = 'none';
+          floorTwo.style.display = 'flex'
+      }
+  })
+
+
 })();
 

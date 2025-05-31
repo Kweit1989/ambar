@@ -10,7 +10,7 @@ radio.addEventListener('change', () => {
 });
 
 
-// Выбор стола 
+// Выбор стола в оформление заказа
 const checkoutFormTable = document.querySelector('.checkout-form-table');
 const tableModel = document.querySelector('.table-modal-container');
 

@@ -66,6 +66,16 @@ body {
   font-family: var(--default-font);
 }
 
+html, body {
+  overflow: auto;
+  scrollbar-width: none;           /* Firefox */
+  -ms-overflow-style: none;        /* IE 10+ */
+}
+
+body::-webkit-scrollbar {
+  display: none;                   /* Chrome, Safari */
+}
+
 a {
   color: var(--accent-color);
   text-decoration: none;
@@ -91,6 +101,18 @@ input[type="time"] {
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
+}
+
+/* Chrome, Safari, Edge */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 /* input {
@@ -1040,7 +1062,7 @@ section,
   font-size: 14px;
   font-weight: 500;
   padding: 0;
-  line-height: 1px;
+  line-height: 100%;
   margin: 0;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -2126,7 +2148,8 @@ input[type="checkbox"]:checked::after {
  
 .auth-modal,
 .reg-modal,
-.cart-modal {
+.cart-modal,
+.table-modal {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2144,7 +2167,9 @@ input[type="checkbox"]:checked::after {
   height: 340px;
   background-color: rgba(12, 11, 9, 0.95); /* лучше использовать rgba вместо rgb с альфой */
 }
-
+.table-modal {
+  height: auto;
+}
 .auth-modal-close,
 .cart-modal-close,
 .table-modal-close {
@@ -2183,6 +2208,9 @@ input[type="checkbox"]:checked::after {
 .cart-modal-title{
   text-align: center;
   margin: 0 auto 30px auto;
+}
+.table-modal-title {
+  margin: 0 auto 10px auto;
 }
 .auth-modal-form,
 .reg-modal-form {
@@ -2231,8 +2259,23 @@ input[type="checkbox"]:checked::after {
   display: block;
   height: auto;
   max-height: 80vh;
-  overflow: scroll;
+  overflow: auto;
 }
+
+.cart-modal::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.cart-modal::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.4);
+  border-radius: 3px;
+}
+
+.cart-modal::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
 .cart-modal-container {
   position: fixed;
   z-index: 5;
@@ -2244,6 +2287,81 @@ input[type="checkbox"]:checked::after {
 }
 .cart-modal-container.active{
   top: 0;
+}
+
+.table-modal-container {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  transition: left 0.3s ease-in;
+}
+.table-modal-container.active {
+  left: 0;
+}
+.table-modal-svg {
+  display: flex;
+  align-items: center;
+}
+.table-modal-toggle {
+  position: relative;
+  width: 30px;
+  height: 18px;
+  border-radius: 50px;
+  border: 2px solid var(--accent-color);
+}
+.table-modal-circly {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  transition: left 0.2s ease-in;
+}
+.table-modal-circly.active{
+  left: 13px;
+}
+.table-modal-floor {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.table-modal-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  row-gap: 50px;
+  margin-bottom: 30px;
+}
+
+.floor-one > .table-modal-table {
+  background-color: #059652;
+}
+
+.table-modal-table {
+  width: 100px;
+  height: 100px;
+  background-color: #e00000;
+}
+
+
+.table-modal-chose {
+  padding: 0;
+  border: none;
+  width: 160px;
+  height: 0px;
+  margin: 0 auto;
+  background-color: var(--accent-color);
+  border-radius: 5px;
+}
+
+.table-modal-chose.active {
+  height: 30px;
 }
 
 .cart-modal-row {
@@ -2406,7 +2524,8 @@ input[type="checkbox"]:checked::after {
       height: 605px;
     }
     .auth-modal-title,
-    .reg-modal-title {
+    .reg-modal-title,
+    .table-modal-title {
       font-size: 24px;
     }
     .auth-modal-form,
@@ -2486,7 +2605,9 @@ input[type="checkbox"]:checked::after {
       width: 34px;
       height: 34px;
     }
-    .auth-modal-title, .reg-modal-title {
+    .auth-modal-title,
+    .reg-modal-title,
+    .table-modal-title {
       font-size: 28px;
     }
     .auth-modal-form, .reg-modal-form { 
@@ -2547,7 +2668,9 @@ input[type="checkbox"]:checked::after {
     .reg-modal {
       width: calc(100% - 300px); /* 100% ширины минус по 10px с каждой стороны */
     }
-    .auth-modal-title, .reg-modal-title {
+    .auth-modal-title,
+    .reg-modal-title,
+    .table-modal-title {
         font-size: 32px;
     }
 }

@@ -38,7 +38,8 @@ input[type="radio"]::after {
 input[type="radio"]:checked::after {
   transform: translate(-50%, -50%) scale(1);
 }
-.checkout-header {
+.checkout-header,
+.table-modal-header {
    padding-bottom: 40px;
 }
 
@@ -134,29 +135,31 @@ input[type="radio"]:checked::after {
     left: 0%;
 }
 
-.table-modal-container .container {
+.table-modal-container{
     padding-top: 20px;
     padding-bottom: 30px;
 }
-.table-modal-container form {
+.table-modal-form {
+    display: grid;
+    row-gap: 20px;
     border: 1px solid var(--accent-color);
     padding: 10px;
     border-radius: 5px;
 }
-.table-modal-container form input,
-.table-modal-container textarea {
+.table-modal-form > input,
+.table-modal-form > textarea {
     background-color: transparent;
     color: var(--default-color);
     border: 1px solid var(--accent-color);
 }
-.table-modal-container form input:focus,
-.table-modal-container textarea:focus{
+.table-modal-form > input:focus,
+.table-modal-form > textarea:focus{
     background-color: transparent;
     color: var(--default-color);
     box-shadow: none;
     border: 1px solid var(--accent-color);
 }
-.table-modal-container form input::placeholder,
-.table-modal-container textarea::placeholder {
+.table-modal-form > input::placeholder,
+.table-modal-form > textarea::placeholder {
     color: var(--default-color);
 }
