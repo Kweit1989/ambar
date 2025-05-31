@@ -2214,7 +2214,10 @@ input[type="checkbox"]:checked::after {
 
 /* Cart modal */
 .cart-modal {
+  display: block;
   height: auto;
+  max-height: 80vh;
+  overflow: scroll;
 }
 .cart-modal-container {
   position: fixed;
@@ -2236,7 +2239,7 @@ input[type="checkbox"]:checked::after {
 }
 .cart-modal-card {
   padding: 15px;
-  border: 1px solid var(--default-color);
+  border: 1px solid var(--accent-color);
   border-radius: 10px;
 }
 .cart-modal-description-card {
@@ -2255,7 +2258,20 @@ input[type="checkbox"]:checked::after {
   height: 50px;
   border-radius: 50%;
 }
-
+.cart-card, .cart-ingredients {
+  text-align: right;
+}
+.cart-detail-link {
+  color: var(--heading-color);
+  font-weight: 700;
+  transition: 0.3s;
+}
+.cart-ingredients {
+  font-style: italic;
+  font-size: 14px;
+  font-family: var(--nav-font);
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+}
 .cart-modal-btn {
   margin-top: 15px;
   display: flex;
@@ -2264,26 +2280,51 @@ input[type="checkbox"]:checked::after {
 }
 .cart-modal-plus,
 .cart-modal-minus {
-  width: 25px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--accent-color);
+  border-radius: 5px;
+  width: 35px;
   height: 25px;
-  border: none;
-  background-color: var(--accent-color);
+  color: var(--accent-color);
   font-weight: 700;
+  background-color: transparent;
 }
 
 .cart-modal-count {
   all: unset;
-  width: 80px;
+  box-sizing: border-box;
+  padding: 7.5px;
+  width: 25px;
   height: 25px;
-  background-color: var(--default-color);
+  background-color: var(--accent-color);
+  color: var( --background-color);
+  border-radius: 5px;
 }
 .cart-modal-delete {
   margin-left: auto;
-  background-color: var(--default-color);
-  border: none;
+  background-color: transparent;
+  border: 2px solid var(--accent-color);
+  border-radius: 5px;
+  color: var(--accent-color);
 }
 
+.cart-modal-design {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin: 0 auto;
+  color: var(--heading-color);
+  background-color: var(--accent-color);
+}
 
+.cart-modal-design:visited{
+  color: var(--heading-color);
+}
 
 @media (min-width: 360px) { 
   .book-a-table .php-email-form button[type=submit] {
