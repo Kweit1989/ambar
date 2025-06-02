@@ -1718,7 +1718,7 @@ section,
   border-radius: 0;
   color: var(--default-color);
   background-color: color-mix(in srgb, var(--background-color), transparent 20%);
-  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+  border-color: var(--accent-color);
 }
 
 .book-a-table .php-email-form input[type=text]:focus,
