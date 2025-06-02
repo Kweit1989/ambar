@@ -560,6 +560,20 @@
   
   
   
+  flatpickr("#date", {
+    dateFormat: "d.m.Y",         // формат для русской локали
+    locale: "ru",                // локализация
+    allowInput: true,            // можно вводить вручную
+  });
+
+  flatpickr("#time", {
+    enableTime: true,
+    noCalendar: true,
+    dateFormat: "H:i",           // формат времени: часы:минуты
+    time_24hr: true,             // 24-часовой формат
+    locale: "ru",                // на всякий случай
+    allowInput: true,
+  });
 
 
 })();

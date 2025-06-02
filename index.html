@@ -25,6 +25,7 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
+
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
@@ -712,13 +713,13 @@
         <form action="#" method="post" role="form" class="php-email-form">
           <div class="row gy-4">
             <div class="col-lg-4 col-md-6">
-              <input type="date" name="date" class="form-control" id="date" placeholder="Date" required="">
+              <input type="text" name="date" class="form-control" id="date" placeholder="Дата" required="">
             </div>
             <div class="col-lg-4 col-md-6">
-              <input type="time" class="form-control" name="time" id="time" placeholder="Time" required="">
+              <input type="text" class="form-control" name="time" id="time" placeholder="Время" required="">
             </div>
             <div class="col-lg-4 col-md-6">
-              <input type="text" class="form-control" name="table" id="table" placeholder="cтол" readonly required>
+              <input type="text" class="form-control" name="table" id="table" placeholder="Стол" readonly required>
             </div>
           </div>
           <div class="text-center mt-3">
@@ -1521,6 +1522,9 @@
 
 
   <!-- Vendor JS Files -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
+
   <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=5e179056-2391-4e15-8915-d8b9b971ae59" type="text/javascript"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
