@@ -248,7 +248,6 @@
   });
 
 
-
   // Яндекс карта
   ymaps.ready(init);
 
@@ -283,6 +282,7 @@
     myMap.geoObjects.add(myPlacemark);
   }
 
+  
   // Меню бургер
   const menuBurgerWrapper = document.querySelector('.menu-burger-wrapper');
   const menuBurger = document.querySelector('.menu-burger');
@@ -409,21 +409,109 @@
   })
 
 
+  // Модальноле окно офромление заказа
+  // Выбор доставки
+  document.querySelectorAll('input[name="delivery_method"]').forEach((radio) => {
+    radio.addEventListener('change', () => {
+        const val = radio.value;
+        document.getElementById('dinein-block').style.display = val === 'dinein' ? 'grid' : 'none';
+        document.getElementById('delivery-address').style.display = val === 'delivery' ? 'grid' : 'none';
+        document.getElementById('pickup-point').style.display = val === 'pickup' ? 'grid' : 'none';
+    });
+  });
+
+  const checkoutModal = document.querySelector('.checkout-modal-container');
+  const cartModalBtn = document.querySelector('.cart-modal-design');
+  const checkoutModalClose = document.querySelector('.checkout-modal-close');
+
+  cartModalBtn.addEventListener('click', function(){
+    cartModal.classList.remove('active');
+     setTimeout(() => {
+        checkoutModal.classList.add('active');
+     }, 300);
+  })
+
+  checkoutModalClose.addEventListener('click', function(){
+     checkoutModal.classList.remove('active');
+     document.body.style.overflow = '';
+  })
+
+
+
+
+
+  // Модальное окно времени и даты + стол
+  const checkoutFormTable = document.querySelector('.checkout-form-table');
+  const dateModal = document.querySelector('.date-modal-container');
+  const dateModalClose = document.querySelector('.date-modal-close');
+  checkoutFormTable.addEventListener('click', function(event){
+    event.preventDefault();
+    checkoutModal.classList.remove('active');
+    setTimeout(() => {
+        dateModal.classList.add('active');
+     }, 300);
+  })
   
+  dateModalClose.addEventListener('click', function(){
+    dateModal.classList.remove('active');
+    setTimeout(() => {
+      checkoutModal.classList.add('active');
+    }, 300)
+  })
+
+
+  const dateModalBtn = document.querySelector('.date-modal-btn');
+  
+  dateModalBtn.addEventListener('click', function(){
+    dateModal.classList.remove('active');
+     setTimeout(() => {
+      checkoutModal.classList.add('active');
+    }, 300)
+  })
+
  
   // Модальное окно столов
-  const table = document.getElementById('tables');
-  const tableModal = document.querySelector('.table-modal-container');
-  
-  const closeModal = document.querySelector('.table-modal-close');
+  const table = document.getElementById('table');
+  const tableModalChoese = document.getElementById('table-modal');
 
-  table.addEventListener('click', function(){
-      tableModal.classList.add('active');
-      document.body.style.overflow = 'hidden';
+  const tableModal = document.querySelector('.table-modal-container');
+  const closeModal = document.querySelector('.table-modal-close');
+  const tableChose = document.querySelector('.table-modal-chose');
+
+  let modalFlag = null;
+  let activeInput = null;
+
+  table.addEventListener('click', function(event){
+    event.preventDefault();
+    document.body.style.overflow = 'hidden';
+    tableModal.classList.add('active')
+    modalFlag = true;
+     activeInput = event.currentTarget;
+  });
+
+  tableModalChoese.addEventListener('click', function(event){
+    event.preventDefault();
+    dateModal.classList.remove('active');
+    setTimeout(() => {
+        tableModal.classList.add('active');
+    }, 300)
+    activeInput = event.currentTarget;
   })
+  
+
   closeModal.addEventListener('click', function(){
-      tableModal.classList.remove('active');
-      document.body.style.overflow = '';
+      if (modalFlag) {
+        tableModal.classList.remove('active');
+        document.body.style.overflow = '';
+        tableChose.style.height = '0px';
+        modalFlag = null;
+      } else {
+        tableModal.classList.remove('active');
+        setTimeout(() => {
+          dateModal.classList.add('active');
+        }, 300)
+        modalFlag = null;
+      }
   })
 
 
@@ -434,6 +522,7 @@
 
   const floorOne = document.querySelector('.floor-one');
   const floorTwo = document.querySelector('.floor-two');
+
 
   modalToggle.addEventListener('click', function () {
       if (modalCircly.classList.contains('active')){
@@ -449,18 +538,26 @@
       }
   })
 
+
   // Выбор стола
   document.querySelectorAll('.table-option').forEach(item => {
-  item.addEventListener('click', function() {
-    const tableName = this.dataset.table;
-    document.getElementById('tables').value = tableName;
-
-    // Закрываем модальное окно (если нужно)
-    tableModal.classList.remove('active');
-    document.body.style.overflow = '';
+    item.addEventListener('click', function() {
+      tableChose.style.height = '30px'
+      const tableName = this.dataset.table;
+      tableChose.addEventListener('click', function(){
+        activeInput.value = tableName;
+        tableChose.style.height = '0px';
+        tableModal.classList.remove('active');
+        document.body.style.overflow = '';
+        if (!modalFlag) {
+          setTimeout(() => {
+            dateModal.classList.add('active');
+          }, 300)
+        }
+      })
+    });
   });
-});
-
+  
 
 
 })();

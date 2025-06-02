@@ -67,7 +67,7 @@ body {
 }
 
 html, body {
-  overflow: auto;
+  /* overflow: auto; */
   scrollbar-width: none;           /* Firefox */
   -ms-overflow-style: none;        /* IE 10+ */
 }
@@ -2136,6 +2136,43 @@ input[type="checkbox"]:checked::after {
   transform: translate(-50%, -55%);
 }
 
+input[type="radio"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #999;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  transition: all 0.2s ease;
+  margin: 0;
+  background-color: #fff;
+}
+
+input[type="radio"]:checked {
+  border-color: var(--accent-color);
+  background-color: #fff; /* фон остаётся белым */
+}
+
+input[type="radio"]::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s ease;
+}
+
+input[type="radio"]:checked::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
 .auth-modal-container,
 .reg-modal-container {
   position: fixed;
@@ -2150,7 +2187,9 @@ input[type="checkbox"]:checked::after {
 .auth-modal,
 .reg-modal,
 .cart-modal,
-.table-modal {
+.table-modal,
+.checkout-modal,
+.date-modal{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2168,12 +2207,15 @@ input[type="checkbox"]:checked::after {
   height: 340px;
   background-color: rgba(12, 11, 9, 0.95); /* лучше использовать rgba вместо rgb с альфой */
 }
-.table-modal {
+.table-modal,
+.date-modal {
   height: auto;
 }
 .auth-modal-close,
 .cart-modal-close,
-.table-modal-close {
+.table-modal-close,
+.checkout-modal-close,
+.date-modal-close {
   display: block;
   margin-left: auto;
   width: 24px;
@@ -2206,7 +2248,9 @@ input[type="checkbox"]:checked::after {
 }
 .auth-modal-title,
 .reg-modal-title,
-.cart-modal-title{
+.cart-modal-title,
+.checkout-modal-title,
+.date-modal-title{
   text-align: center;
   margin: 0 auto 30px auto;
 }
@@ -2235,7 +2279,6 @@ input[type="checkbox"]:checked::after {
   border: none;
   border-radius: 10px;
   padding: 5px 10px;
-  color: var(--heading-color);
 }
 .auth-modal-reg {
   border: none;
@@ -2277,7 +2320,8 @@ input[type="checkbox"]:checked::after {
   background-color: transparent;
 }
 
-.cart-modal-container {
+.cart-modal-container,
+.checkout-modal-container {
   position: fixed;
   z-index: 5;
   top: -100%;
@@ -2286,83 +2330,11 @@ input[type="checkbox"]:checked::after {
   height: 100%;
   transition: top 0.3s ease-in;
 }
-.cart-modal-container.active{
+
+.cart-modal-container.active,
+.checkout-modal-container.active{
   top: 0;
 }
-
-.table-modal-container {
-  position: fixed;
-  z-index: 5;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-  transition: left 0.3s ease-in;
-}
-.table-modal-container.active {
-  left: 0;
-}
-.table-modal-svg {
-  display: flex;
-  align-items: center;
-}
-.table-modal-toggle {
-  position: relative;
-  width: 30px;
-  height: 18px;
-  border-radius: 50px;
-  border: 2px solid var(--accent-color);
-}
-.table-modal-circly {
-  position: absolute;
-  top: 1px;
-  left: 1px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: var(--accent-color);
-  transition: left 0.2s ease-in;
-}
-.table-modal-circly.active{
-  left: 13px;
-}
-.table-modal-floor {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.table-modal-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  row-gap: 50px;
-  margin-bottom: 30px;
-}
-
-.table-modal-table {
-  width: 100px;
-  height: 100px;
-}
-.table-modal-table > img {
-  width: 100%;
-  height: 100%;
-}
-
-.table-modal-chose {
-  padding: 0;
-  border: none;
-  width: 160px;
-  height: 0px;
-  margin: 0 auto;
-  background-color: var(--accent-color);
-  border-radius: 5px;
-}
-
-.table-modal-chose.active {
-  height: 30px;
-}
-
 .cart-modal-row {
   display: flex;
   flex-direction: column;
@@ -2448,14 +2420,11 @@ input[type="checkbox"]:checked::after {
   justify-content: center;
   padding: 5px 15px;
   border-radius: 5px;
+  border: none;
   margin: 0 auto;
-  color: var(--heading-color);
   background-color: var(--accent-color);
 }
-.cart-modal-design:visited,
-.cart-modal-design:active{
-  color: var(--heading-color);
-}
+
 .cart-modal-total {
   padding: 5px 15px;
   border: 1px solid var(--accent-color);
@@ -2464,6 +2433,219 @@ input[type="checkbox"]:checked::after {
   align-items: center;
   justify-content: space-between;
 }
+
+/* Checkout modal */
+.checkout-modal {
+    height: auto;
+}
+.checkout-modal-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.checkout-form-adress {
+  padding: 15px;
+  border: 1px solid var(--accent-color);
+  border-radius: 10px;
+}
+.checkout-form-adress > label {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+#dinein-block {
+    display: grid;
+    row-gap: 20px;
+}
+.checkout-form-table,
+.checkout-form-pay {
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    background-color: transparent;
+    background-color: var(--accent-color);
+}
+.delivery-block > *{
+    width: 100%;
+}
+#delivery-address {
+    display: grid;
+    row-gap: 5px;
+}
+#delivery-address > input {
+    background-color: transparent;
+    border: 1px solid var(--accent-color);
+    padding: 3px 5px;
+    color: var(--default-color);
+    border-radius: 5px;
+}
+#delivery-address > input:focus {
+    outline: none;
+}
+.delivery-address-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url('../img/svg/arrow-down.svg') no-repeat right 5px center;
+    background-size: 16px;
+    background-color: transparent;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    color: var(--default-color);
+    padding: 3px 5px;
+
+}
+.delivery-address-select:focus{
+    outline: none;
+}
+.delivery-address-select > option {
+    background-color: color-mix(in srgb, var(--background-color) 90%, white 5%);
+}
+.checkout-form-comment {
+    background-color: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--default-color);
+    border-radius: 5px;
+    padding: 15px;
+}
+.checkout-form-comment:focus{
+    outline: none;
+}
+
+/* Modal table date */
+.date-modal-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  border: 1px solid var(--accent-color);
+  padding: 15px;
+  border-radius: 5px;
+}
+.date-modal-form  > input{
+    background-color: transparent;
+    color: var(--default-color);
+    border: 1px solid var(--accent-color);
+}
+.date-modal-form > input:focus{
+    background-color: transparent;
+    color: var(--default-color);
+    box-shadow: none;
+    border: 1px solid var(--accent-color);
+}
+.date-modal-form > input::placeholder{
+    color: var(--default-color);
+}
+.date-modal-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 5px 15px;
+    border-radius: 5px;
+    background-color: var(--accent-color);
+    border: none;
+}
+
+/* Modal table chose  */
+.table-modal-container,
+.date-modal-container {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  transition: left 0.3s ease-in;
+}
+.table-modal-container.active,
+.date-modal-container.active {
+  left: 0;
+}
+.table-modal-svg {
+  display: flex;
+  align-items: center;
+}
+.table-modal-toggle {
+  position: relative;
+  width: 30px;
+  height: 18px;
+  border-radius: 50px;
+  border: 2px solid var(--accent-color);
+}
+.table-modal-circly {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  transition: left 0.2s ease-in;
+}
+.table-modal-circly.active{
+  left: 13px;
+}
+.table-modal-floor {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.table-modal-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  row-gap: 50px;
+  margin-bottom: 30px;
+}
+
+.table-modal-table {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  box-shadow: 0 6px 0 var(--accent-color); /* Вниз тень — как будто кнопка "выпирает" */
+  transition: all 0.1s ease;
+  cursor: pointer;
+}
+
+.table-modal-table:focus {
+  box-shadow: 0 1px 0 var(--accent-color);
+  transform: translateY(4px); /* Вдавливаем кнопку */
+}
+
+
+.table-modal-table > img {
+  width: 100%;
+  height: 100%;
+}
+.table-modal-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  font-size: 10px;
+  color: var(--contrast-color);
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+
+.table-modal-chose {
+  padding: 0;
+  border: none;
+  width: 160px;
+  height: 0px;
+  margin: 0 auto;
+  background-color: var(--accent-color);
+  border-radius: 5px;
+  transition: height 0.3s ease-in;
+}
+
+.table-modal-chose.active {
+  height: 30px;
+}
+
 
 @media (min-width: 360px) { 
   .book-a-table .php-email-form button[type=submit] {
@@ -2515,7 +2697,9 @@ input[type="checkbox"]:checked::after {
     .auth-modal-close,
     .reg-modal-back,
     .cart-modal-close,
-    .table-modal-close {
+    .table-modal-close,
+    .checkout-modal-close,
+    .date-modal-close {
       width: 28px;
       height: 28px;
     }
@@ -2524,7 +2708,9 @@ input[type="checkbox"]:checked::after {
     }
     .auth-modal-title,
     .reg-modal-title,
-    .table-modal-title {
+    .table-modal-title,
+    .checkout-modal-title,
+    .date-modal-title {
       font-size: 24px;
     }
     .auth-modal-form,
@@ -2600,13 +2786,17 @@ input[type="checkbox"]:checked::after {
     .auth-modal-close,
     .reg-modal-back,
     .cart-modal-close,
-    .table-modal-close {
+    .table-modal-close,
+    .checkout-modal-close,
+    .date-modal-close {
       width: 34px;
       height: 34px;
     }
     .auth-modal-title,
     .reg-modal-title,
-    .table-modal-title {
+    .table-modal-title,
+    .checkout-modal-title,
+    .date-modal-title {
       font-size: 28px;
     }
     .auth-modal-form, .reg-modal-form { 
@@ -2669,7 +2859,9 @@ input[type="checkbox"]:checked::after {
     }
     .auth-modal-title,
     .reg-modal-title,
-    .table-modal-title {
+    .table-modal-title,
+    .checkout-modal-title,
+    .date-modal-title {
         font-size: 32px;
     }
 }

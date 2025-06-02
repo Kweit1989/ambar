@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="utf-8">
@@ -709,7 +709,7 @@
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <form action="forms/book-a-table.php" method="post" role="form" class="php-email-form">
+        <form action="#" method="post" role="form" class="php-email-form">
           <div class="row gy-4">
             <div class="col-lg-4 col-md-6">
               <input type="date" name="date" class="form-control" id="date" placeholder="Date" required="">
@@ -718,10 +718,7 @@
               <input type="time" class="form-control" name="time" id="time" placeholder="Time" required="">
             </div>
             <div class="col-lg-4 col-md-6">
-              <input type="number" class="form-control" name="people" id="people" placeholder="Количество персон" required="">
-            </div>
-             <div class="col-lg-4 col-md-6">
-              <input type="text" class="form-control" name="table" id="tables" placeholder="Выберите стол" readonly required>
+              <input type="text" class="form-control" name="table" id="table" placeholder="Количество персон" readonly required>
             </div>
           </div>
           <div class="text-center mt-3">
@@ -1249,10 +1246,11 @@
   <!-- Modal cart -->
   <div class="cart-modal-container">
     <div class="cart-modal">
-       <div class="cart-modal-svg">
-        <svg class="cart-modal-close" xmlns="http://www.w3.org/2000/svg" fill="#cda45e" viewBox="0 0 256 256">
-            <path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V48H208V208ZM165.66,101.66,139.31,128l26.35,26.34a8,8,0,0,1-11.32,11.32L128,139.31l-26.34,26.35a8,8,0,0,1-11.32-11.32L116.69,128,90.34,101.66a8,8,0,0,1,11.32-11.32L128,116.69l26.34-26.35a8,8,0,0,1,11.32,11.32Z"></path>
-        </svg>
+        <div class="cart-modal-svg">
+          <svg class="cart-modal-close" xmlns="http://www.w3.org/2000/svg" fill="#cda45e" viewBox="0 0 256 256">
+              <path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V48H208V208ZM165.66,101.66,139.31,128l26.35,26.34a8,8,0,0,1-11.32,11.32L128,139.31l-26.34,26.35a8,8,0,0,1-11.32-11.32L116.69,128,90.34,101.66a8,8,0,0,1,11.32-11.32L128,116.69l26.34-26.35a8,8,0,0,1,11.32,11.32Z"></path>
+          </svg>
+        </div>
         <h5 class="cart-modal-title">Корзина</h5>
         <div class="cart-modal-row">
           <div class="cart-modal-card">
@@ -1369,13 +1367,89 @@
             <span>Общая сумма:</span>
             <span>2350 ₽</span>
           </div>
-          <a class="cart-modal-design" href="./checkout.html">Оформить заказ</a>
+          <button class="cart-modal-design">Оформить заказ</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Modal table -->
+  <!-- Modal checkout -->
+  <div class="checkout-modal-container">
+    <div class="checkout-modal">
+      <div class="checkout-modal-svg">
+        <svg class="checkout-modal-close" xmlns="http://www.w3.org/2000/svg" fill="#cda45e" viewBox="0 0 256 256">
+            <path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V48H208V208ZM165.66,101.66,139.31,128l26.35,26.34a8,8,0,0,1-11.32,11.32L128,139.31l-26.34,26.35a8,8,0,0,1-11.32-11.32L116.69,128,90.34,101.66a8,8,0,0,1,11.32-11.32L128,116.69l26.34-26.35a8,8,0,0,1,11.32,11.32Z"></path>
+        </svg>
+      </div>
+      <h5 class="checkout-modal-title">Оформление заказа</h5>
+      <form action="" class="checkout-modal-form">
+        <div class="checkout-form-adress">
+            <label>
+                <input type="radio" name="delivery_method" value="dinein" checked>
+                <span class="radio-mark"></span>
+            <span>Здесь, в кафе</span>
+            </label>
+            <label>
+                <input type="radio" name="delivery_method" value="delivery">
+                <span class="radio-mark"></span>
+            <span>Доставка по адресу</span>
+            </label>
+            <label>
+                <input type="radio" name="delivery_method" value="pickup">
+                <span class="radio-mark"></span>
+                <span>Самовывоз из пункта</span>
+            </label>
+        </div>
+        <div class="checkout-form-checked">
+            <div id="dinein-block" class="delivery-block" style="display: grid;">
+                <!-- Можно оставить пустым или текст: -->
+                <select class="delivery-address-select">
+                    <option>Новосондецкий бульвар, 15 А</option>
+                    <option>Пункт 2</option>
+                </select>
+                <button class="checkout-form-table">Выбрать стол и время</button>
+            </div>
+
+            <div id="delivery-address" class="delivery-block" style="display: none;">
+                <!-- Форма с адресом -->
+                <input class="delivery-address-ul" type="text" placeholder="Улица">
+                <input class="delivery-address-build" type="number" placeholder="Дом">
+                <input class="delivery-address-house" type="number" placeholder="Квартира">
+            </div>
+
+            <div id="pickup-point" class="delivery-block" style="display: none;">
+                <!-- Селект или список пунктов самовывоза -->
+                <select class="delivery-address-select">
+                    <option>Новосондецкий бульвар, 15 А</option>
+                    <option>Пункт 2</option>
+                </select>
+            </div>
+        </div>
+      <textarea class="checkout-form-comment" name="order_comment" rows="4" placeholder="Коментарий к заказу"></textarea>
+      <button class="checkout-form-pay">Оплатить заказ</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal table date -->
+  <div class="date-modal-container">
+      <div class="date-modal">
+        <div class="date-modal-svg">
+          <svg class="date-modal-close" xmlns="http://www.w3.org/2000/svg" fill="#cda45e" viewBox="0 0 256 256">
+              <path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V48H208V208ZM165.66,101.66,139.31,128l26.35,26.34a8,8,0,0,1-11.32,11.32L128,139.31l-26.34,26.35a8,8,0,0,1-11.32-11.32L116.69,128,90.34,101.66a8,8,0,0,1,11.32-11.32L128,116.69l26.34-26.35a8,8,0,0,1,11.32,11.32Z"></path>
+          </svg>
+        </div>
+        <h5 class="date-modal-title">Забронировать стол</h5>
+        <form action="#" method="post" role="form" class="date-modal-form">
+            <input type="date" name="date" class="form-control" id="date" placeholder="Date" required="">
+            <input type="time" class="form-control" name="time" id="time" placeholder="Time" required="">
+            <input type="text" class="form-control" name="table" id="table-modal" placeholder="Количество персон" readonly required>
+            <button class="date-modal-btn">Забронировать</button>
+        </form>
+      </div>
+  </div>
+
+  <!-- Modal table chose -->
   <div class="table-modal-container">
     <div class="table-modal">
       <div class="table-modal-svg">
@@ -1389,44 +1463,56 @@
       <h5 class="table-modal-title">Выбор стола</h5>
       <span class="table-modal-floor">1 этаж</span>
         <div class="table-modal-row floor-one">
-            <div class="table-modal-table table-option" data-table="Стол №1">
+            <button class="table-modal-table table-option" data-table="Стол №1 - 1 этаж (1/6-персон)">
               <img src="./assets/img/svg/table.png" alt="">
-            </div>
-            <div class="table-modal-table table-option" data-table="Стол №2">
+              <span class="table-modal-text">1/6-персон</span>
+            </button>
+            <button class="table-modal-table table-option" data-table="Стол №2 - 1 этаж (1/6-персон)">
               <img src="./assets/img/svg/table.png" alt="">
-            </div>
-            <div class="table-modal-table table-option" data-table="Стол №3">
+              <span class="table-modal-text">1/6-персон</span>
+            </button>
+            <button class="table-modal-table table-option" data-table="Стол №3 - 1 этаж (1/6-персон)">
               <img src="./assets/img/svg/table.png" alt="">
-            </div>
-            <div class="table-modal-table table-option" data-table="Стол №4">
+              <span class="table-modal-text">1/6-персон</span>
+            </button>
+            <button class="table-modal-table table-option" data-table="Стол №4 - 1 этаж (1/6-персон)">
               <img src="./assets/img/svg/table.png" alt="">
-            </div>
-            <div class="table-modal-table table-option" data-table="Стол №5">
+              <span class="table-modal-text">1/6-персон</span>
+            </button>
+            <button class="table-modal-table table-option" data-table="Стол №5 - 1 этаж (1/6-персон)">
               <img src="./assets/img/svg/table.png" alt="">
-            </div>
-            <div class="table-modal-table table-option" data-table="Стол №6">
+              <span class="table-modal-text">1/6-персон</span>
+            </button>
+            <button class="table-modal-table table-option" data-table="Стол №6 - 1 этаж (1/6-персон)">
               <img src="./assets/img/svg/table.png" alt="">
-            </div>
+              <span class="table-modal-text">1/6-персон</span>
+            </button>
         </div>
         <div class="table-modal-row floor-two" style="display: none;">
-           <div class="table-modal-table table-option" data-table="Стол №7">
+           <button class="table-modal-table table-option" data-table="Стол №7 - 2 этаж (1/8-персон)">
               <img src="./assets/img/svg/table.png" alt="">
-            </div>
-            <div class="table-modal-table table-option" data-table="Стол №8">
+              <span class="table-modal-text">1/8-персон</span>
+            </button>
+            <button class="table-modal-table table-option" data-table="Стол №8 - 2 этаж (1/8-персон)">
               <img src="./assets/img/svg/table.png" alt="">
-            </div>
-            <div class="table-modal-table table-option" data-table="Стол №9">
+              <span class="table-modal-text">1/8-персон</span>
+            </button>
+            <button class="table-modal-table table-option" data-table="Стол №9 - 2 этаж (1/8-персон)">
               <img src="./assets/img/svg/table.png" alt="">
-            </div>
-            <div class="table-modal-table table-option" data-table="Стол №10">
+              <span class="table-modal-text">1/8-персон</span>
+            </button>
+            <button class="table-modal-table table-option" data-table="Стол №10 - 2 этаж (1/8-персон)">
               <img src="./assets/img/svg/table.png" alt="">
-            </div>
-            <div class="table-modal-table table-option" data-table="Стол №11">
+              <span class="table-modal-text">1/8-персон</span>
+            </button>
+            <button class="table-modal-table table-option" data-table="Стол №11 - 2 этаж (1/8-персон)">
               <img src="./assets/img/svg/table.png" alt="">
-            </div>
-            <div class="table-modal-table table-option" data-table="Стол №12">
+              <span class="table-modal-text">1/8-персон</span>
+            </button>
+            <button class="table-modal-table table-option" data-table="Стол №12 - 2 этаж (1/8-персон)">
               <img src="./assets/img/svg/table.png" alt="">
-            </div>
+              <span class="table-modal-text">1/8-персон</span>
+            </button>
         </div>
         <button class="table-modal-chose">Выбрать</button>
     </div>
