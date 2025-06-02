@@ -2173,12 +2173,14 @@ input[type="radio"]:checked::after {
 
 
 /* Table */
-#date {
+#date,
+#date-modal{
   background: url('../img/svg/calendar.svg') no-repeat right 10px center;
   background-size: 20px 20px;
  
 }
-#time {
+#time,
+#time-modal {
   background: url('../img/svg/clock.svg') no-repeat right 10px center;
   background-size: 20px 20px;
  

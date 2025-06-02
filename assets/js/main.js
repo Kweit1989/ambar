@@ -462,12 +462,15 @@
 
   const dateModalBtn = document.querySelector('.date-modal-btn');
   
-  dateModalBtn.addEventListener('click', function(){
-    dateModal.classList.remove('active');
-     setTimeout(() => {
-      checkoutModal.classList.add('active');
-    }, 300)
-  })
+  if(dateModalBtn){
+    dateModalBtn.addEventListener('click', function(){
+        dateModal.classList.remove('active');
+        setTimeout(() => {
+          checkoutModal.classList.add('active');
+        }, 300)
+    })
+  }
+  
 
  
   // Модальное окно столов
@@ -481,38 +484,46 @@
   let modalFlag = null;
   let activeInput = null;
 
-  table.addEventListener('click', function(event){
-    event.preventDefault();
-    document.body.style.overflow = 'hidden';
-    tableModal.classList.add('active')
-    modalFlag = true;
-     activeInput = event.currentTarget;
-  });
+  if(table) {
+    table.addEventListener('click', function(event){
+      event.preventDefault();
+      document.body.style.overflow = 'hidden';
+      tableModal.classList.add('active')
+      modalFlag = true;
+      activeInput = event.currentTarget;
+    });
+  }
+ 
 
-  tableModalChoese.addEventListener('click', function(event){
-    event.preventDefault();
-    dateModal.classList.remove('active');
-    setTimeout(() => {
-        tableModal.classList.add('active');
-    }, 300)
-    activeInput = event.currentTarget;
-  })
+  if(tableModalChoese){
+    tableModalChoese.addEventListener('click', function(event){
+      event.preventDefault();
+      dateModal.classList.remove('active');
+      setTimeout(() => {
+          tableModal.classList.add('active');
+      }, 300)
+      activeInput = event.currentTarget;
+    })
+  }
+  
   
 
+  if(closeModal){
   closeModal.addEventListener('click', function(){
-      if (modalFlag) {
-        tableModal.classList.remove('active');
-        document.body.style.overflow = '';
-        tableChose.style.height = '0px';
-        modalFlag = null;
-      } else {
-        tableModal.classList.remove('active');
-        setTimeout(() => {
-          dateModal.classList.add('active');
-        }, 300)
-        modalFlag = null;
-      }
-  })
+        if (modalFlag) {
+          tableModal.classList.remove('active');
+          document.body.style.overflow = '';
+          tableChose.style.height = '0px';
+          modalFlag = null;
+        } else {
+          tableModal.classList.remove('active');
+          setTimeout(() => {
+            dateModal.classList.add('active');
+          }, 300)
+          modalFlag = null;
+        }
+    })
+  }
 
 
   // Переключатель этажей 
@@ -524,7 +535,8 @@
   const floorTwo = document.querySelector('.floor-two');
 
 
-  modalToggle.addEventListener('click', function () {
+  if(modalToggle){
+    modalToggle.addEventListener('click', function () {
       if (modalCircly.classList.contains('active')){
           modalCircly.classList.remove('active');
           modalFloor.textContent = "1 этаж";
@@ -536,7 +548,9 @@
           floorOne.style.display = 'none';
           floorTwo.style.display = 'flex'
       }
-  })
+    })
+  }
+  
 
 
   // Выбор стола
@@ -559,21 +573,27 @@
   });
   
   
-  
-  flatpickr(".date", {
-    dateFormat: "d.m.Y",         // формат для русской локали
-    locale: "ru",                // локализация
-    allowInput: true,            // можно вводить вручную
+  document.addEventListener('DOMContentLoaded', function(){
+    flatpickr(".date", {
+    dateFormat: "d.m.Y",
+    locale: "ru",
+    allowInput: true,
+    disableMobile: true, // 💥 отключает системный календарь даже на телефоне
   });
+
 
   flatpickr(".time", {
     enableTime: true,
     noCalendar: true,
-    dateFormat: "H:i",           // формат времени: часы:минуты
-    time_24hr: true,             // 24-часовой формат
-    locale: "ru",                // на всякий случай
+    dateFormat: "H:i",
+    time_24hr: true,
+    locale: "ru",
     allowInput: true,
+    disableMobile: true, // 💥 обязательно!
   });
+  })
+
+
 
 
 })();
