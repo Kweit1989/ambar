@@ -574,23 +574,33 @@
   
   
   document.addEventListener('DOMContentLoaded', function(){
-    flatpickr(".date", {
-    dateFormat: "d.m.Y",
-    locale: "ru",
-    allowInput: true,
-    disableMobile: true, // 💥 отключает системный календарь даже на телефоне
-  });
+  //   flatpickr(".date", {
+  //   dateFormat: "d.m.Y",
+  //   locale: "ru",
+  //   allowInput: true,
+  //   disableMobile: true, // 💥 отключает системный календарь даже на телефоне
+  // });
 
 
-  flatpickr(".time", {
-    enableTime: true,
-    noCalendar: true,
-    dateFormat: "H:i",
-    time_24hr: true,
-    locale: "ru",
-    allowInput: true,
-    disableMobile: true, // 💥 обязательно!
-  });
+  // flatpickr(".time", {
+  //   enableTime: true,
+  //   noCalendar: true,
+  //   dateFormat: "H:i",
+  //   time_24hr: true,
+  //   locale: "ru",
+  //   allowInput: true,
+  //   disableMobile: true, // 💥 обязательно!
+  // });
+
+
+  //  const input = document.getElementById('time');
+
+  //   const timepicker = new mdtimepicker(input, {
+  //     theme: 'blue',
+  //   });
+
+
+
   })
 
 
