@@ -577,7 +577,7 @@
     flatpickr(".date", {
     dateFormat: "d.m.Y",
     locale: "ru",
-    allowInput: true,
+    allowInput: false,
     disableMobile: true, // 💥 отключает системный календарь даже на телефоне
   });
 
