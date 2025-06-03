@@ -19,15 +19,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   
   <!-- flatpickr -->
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"/> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"/>
 
   <!-- clockpicker -->
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/clockpicker/dist/bootstrap-clockpicker.min.css"> -->
 
   <!-- MDTimePicker -->
-  <link rel="stylesheet" href="./assets/vendor/MDTimePicker/dist/mdtimepicker.min.css">
-  
+  <!-- <link rel="stylesheet" href="./assets/vendor/MDTimePicker/dist/mdtimepicker.min.css"> -->
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dmuy/MDTimePicker@v1.0.2-rc2/mdtimepicker.min.css">
+
 
 
   <!-- Vendor CSS Files -->
@@ -725,10 +727,10 @@
         <form action="#" method="post" role="form" class="php-email-form">
           <div class="row gy-4">
             <div class="col-lg-4 col-md-6">
-              <input type="date" class="form-control date" name="date"  id="date" placeholder="Дата" required="">
+              <input type="text" class="form-control date" name="date"  id="date" placeholder="Дата" required="">
             </div>
             <div class="col-lg-4 col-md-6">
-              <input type="time" class="form-control time" name="time" id="time" placeholder="Время" required="">
+              <input type="text" class="form-control time" name="time" id="time" placeholder="Время" required="">
             </div>
             <div class="col-lg-4 col-md-6">
               <input type="text" class="form-control" name="table" id="table" placeholder="Стол" readonly required>
@@ -1546,8 +1548,13 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/clockpicker/dist/bootstrap-clockpicker.min.js"></script> -->
   
-  <script src="./assets/vendor/MDTimePicker/dist/mdtimepicker.min.js"></script>
+  <!-- <script src="./assets/vendor/MDTimePicker/dist/mdtimepicker.min.js"></script> -->
 
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/dmuy/MDTimePicker@v1.0.2-rc2/mdtimepicker.min.js"></script>
+ 
 
   <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=5e179056-2391-4e15-8915-d8b9b971ae59" type="text/javascript"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -1559,8 +1566,11 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  
 
+  
+
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>
