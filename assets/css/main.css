@@ -2205,6 +2205,8 @@ input[type="radio"]:checked::after {
 }
 
 .flatpickr-months {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
   background-color: var(--accent-color);
 }
 
