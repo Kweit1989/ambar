@@ -2291,7 +2291,12 @@ input[type="radio"]:checked::after {
   border-color: var(--accent-color);
 }
 
-
+.flatpickr-time input:hover, 
+.flatpickr-time .flatpickr-am-pm:hover, 
+.flatpickr-time input:focus, 
+.flatpickr-time .flatpickr-am-pm:focus {
+  background-color: var(--accent-color);
+}
 
 
 
