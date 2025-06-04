@@ -2197,6 +2197,101 @@ input[type="radio"]:checked::after {
 }
 
 /* Date */
+.flatpickr-calendar{
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background-color: var(--background-color);
+  border: 1px solid var(--accent-color);
+}
+
+.flatpickr-months {
+  background-color: var(--accent-color);
+}
+
+.flatpickr-weekday {
+  color: var(--heading-color) !important;
+}
+
+.flatpickr-months .flatpickr-prev-month svg, 
+.flatpickr-months .flatpickr-next-month svg {
+  display: flex;
+ 
+}
+.flatpickr-months .flatpickr-prev-month svg path,
+.flatpickr-months .flatpickr-next-month svg path {
+  stroke: black;
+  stroke-width: 1;
+  fill: none;
+}
+
+.flatpickr-current-month {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.numInputWrapper span {
+  opacity: 1;
+}
+.flatpickr-current-month .numInputWrapper {
+  width: 90px;
+}
+.flatpickr-day.flatpickr-disabled, 
+.flatpickr-day.flatpickr-disabled:hover, 
+.flatpickr-day.prevMonthDay, 
+.flatpickr-day.nextMonthDay, 
+.flatpickr-day.notAllowed, 
+.flatpickr-day.notAllowed.prevMonthDay, 
+.flatpickr-day.notAllowed.nextMonthDay {
+  color: #393939;
+}
+
+.flatpickr-day{
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+}
+
+.flatpickr-current-month input.cur-year {
+  padding: 0;
+  font-weight: 500;
+}
+.flatpickr-current-month .flatpickr-monthDropdown-months {
+  font-weight: 500 !important;
+  padding: 0;
+  padding-top: 2px;
+  appearance: none;        /* отключает стандартную стрелку */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-image: url('../img/svg/arrow-down-date.svg');
+  background-repeat: no-repeat;
+  background-position: right 10px center; /* 👉 подвигаем стрелку */
+  background-size: 16px 16px;
+  padding-right: 30px; /* делаем место под стрелку */
+}
+
+.flatpickr-current-month .flatpickr-monthDropdown-months,
+.flatpickr-current-month .flatpickr-monthDropdown-months:focus,
+.flatpickr-current-month .flatpickr-monthDropdown-months:active {
+  background-image: url('../img/svg/arrow-down-date.svg');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px 16px;
+  background-color: var(--accent-color);
+  padding-right: 30px;
+}
+
+
+.flatpickr-day.today {
+  border-color: var(--accent-color);
+}
+
+.flatpickr-day.selected {
+  background: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+
+
 
 
 .auth-modal-container,
