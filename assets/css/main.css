@@ -2184,7 +2184,7 @@ input[type="radio"]:checked::after {
   right: 10px;
   top: 47%;
   transform: translateY(-50%);
-  transition: fill 0.5s ease-in;
+  transition: fill 0.3s ease-in;
 }
 #table,
 #table-modal {
@@ -2197,7 +2197,7 @@ input[type="radio"]:checked::after {
 #time-modal::placeholder,
 #table-modal::placeholder{
   color: var(--default-color);
-  transition: color 0.5s ease-in;
+  transition: color 0.3s ease-in;
 }
 #table.error::placeholder,
 #date.error::placeholder,
@@ -2214,7 +2214,7 @@ input[type="radio"]:checked::after {
   margin-top: 5px;
   height: 0px;
   overflow: hidden;
-  transition: height 0.5s ease-in;
+  transition: height 0.3s ease-in;
 }
 
 input.error {
