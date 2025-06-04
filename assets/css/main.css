@@ -2196,7 +2196,7 @@ input[type="radio"]:checked::after {
   color: var(--default-color);
 }
 
-
+/* Date */
 
 
 .auth-modal-container,

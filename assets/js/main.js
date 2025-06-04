@@ -574,36 +574,36 @@
   
   
   document.addEventListener('DOMContentLoaded', function(){
+
+      
     flatpickr(".date", {
-    dateFormat: "d.m.Y",
-    locale: "ru",
-    allowInput: false,
-    disableMobile: true, // 💥 отключает системный календарь даже на телефоне
-  });
+      dateFormat: "d.m.Y",
+      locale: "ru",
+      allowInput: false,
+      disableMobile: true, // 💥 отключает системный календарь даже на телефоне
+    });
 
 
-  // flatpickr(".time", {
-  //   enableTime: true,
-  //   noCalendar: true,
-  //   dateFormat: "H:i",
-  //   time_24hr: true,
-  //   locale: "ru",
-  //   allowInput: true,
-  //   disableMobile: true, // 💥 обязательно!
-  // });
 
 
-//  const input = document.getElementById('time');
 
-//   const timepicker = new mdtimepicker(input, {
-//     theme: 'blue',
-//     mode: '24h' // ⬅️ Включает 24-часовой формат
-//   });
+    flatpickr(".time", {
+      enableTime: true,
+      noCalendar: true,
+      dateFormat: "H:i",
+      time_24hr: true,
+      locale: "ru",
+      allowInput: false,
+      disableMobile: true, // 💥 обязательно!
+    });
 
 
-     $(document).ready(function(){
-          $('#time').mdtimepicker({ is24hour: true });
-      });
+    //  const input = document.getElementById('time');
+
+    //   const timepicker = new mdtimepicker(input, {
+    //     theme: 'blue',
+    //     mode: '24h' // ⬅️ Включает 24-часовой формат
+    //   });
 
   })
 
