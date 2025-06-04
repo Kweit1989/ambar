@@ -2238,7 +2238,7 @@ input.error {
 }
 .date-modal-btn {
     display: block;
-    margin: 0 auto;
+    margin: 20px auto 0 auto;
     padding: 5px 15px;
     border-radius: 5px;
     background-color: var(--accent-color);

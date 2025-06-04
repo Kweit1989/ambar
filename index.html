@@ -1476,40 +1476,40 @@
           </svg>
         </div>
         <h5 class="date-modal-title">Забронировать стол</h5>
-        <form action="#" method="post" role="form" class="date-modal-form">
+        <form id="table-form-modal" action="#" method="post" role="form">
             <div class="row gy-4">
               <div class="col-lg-4 col-md-6">
                 <div class="col-relative">
                   <input type="text" class="form-control date" name="date-modal" id="date-modal" placeholder="Дата">
-                  <svg id="date-svg" class="svg-absolute" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#cda45e" viewBox="0 0 256 256">
+                  <svg id="date-svg-modal" class="svg-absolute" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#cda45e" viewBox="0 0 256 256">
                       <path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Zm-96-88v64a8,8,0,0,1-16,0V132.94l-4.42,2.22a8,8,0,0,1-7.16-14.32l16-8A8,8,0,0,1,112,120Zm59.16,30.45L152,176h16a8,8,0,0,1,0,16H136a8,8,0,0,1-6.4-12.8l28.78-38.37A8,8,0,1,0,145.07,132a8,8,0,1,1-13.85-8A24,24,0,0,1,176,136,23.76,23.76,0,0,1,171.16,150.45Z">
                       </path>
                   </svg>
                 </div>
-                <div class="error-text" id="date-error">Пожалуйста, выберите дату</div>
+                <div class="error-text" id="date-error-modal">Пожалуйста, выберите дату</div>
               </div>
               <div class="col-lg-4 col-md-6 col-relative">
                 <div class="col-relative">
                   <input type="text" class="form-control time" name="time-modal" id="time-modal" placeholder="Время">
-                  <svg id="time-svg" class="svg-absolute" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#cda45e" viewBox="0 0 256 256">
+                  <svg id="time-svg-modal" class="svg-absolute" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#cda45e" viewBox="0 0 256 256">
                       <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z">
                       </path>
                   </svg>
                 </div>
-                <div class="error-text" id="time-error">Пожалуйста, выберите время</div>
+                <div class="error-text" id="time-error-modal">Пожалуйста, выберите время</div>
               </div>
               <div class="col-lg-4 col-md-6 col-relative">
                 <div class="col-relative">
                   <input type="text" class="form-control" name="table-modal" id="table-modal" placeholder="Стол" readonly>
-                  <svg id="table-svg" class="svg-absolute" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#cda45e" viewBox="0 0 256 256">
+                  <svg id="table-svg-modal" class="svg-absolute" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#cda45e" viewBox="0 0 256 256">
                       <path d="M27.2,126.4a8,8,0,0,0,11.2-1.6,52,52,0,0,1,83.2,0,8,8,0,0,0,11.2,1.59,7.73,7.73,0,0,0,1.59-1.59h0a52,52,0,0,1,83.2,0,8,8,0,0,0,12.8-9.61A67.85,67.85,0,0,0,203,93.51a40,40,0,1,0-53.94,0,67.27,67.27,0,0,0-21,14.31,67.27,67.27,0,0,0-21-14.31,40,40,0,1,0-53.94,0A67.88,67.88,0,0,0,25.6,115.2,8,8,0,0,0,27.2,126.4ZM176,40a24,24,0,1,1-24,24A24,24,0,0,1,176,40ZM80,40A24,24,0,1,1,56,64,24,24,0,0,1,80,40ZM203,197.51a40,40,0,1,0-53.94,0,67.27,67.27,0,0,0-21,14.31,67.27,67.27,0,0,0-21-14.31,40,40,0,1,0-53.94,0A67.88,67.88,0,0,0,25.6,219.2a8,8,0,1,0,12.8,9.6,52,52,0,0,1,83.2,0,8,8,0,0,0,11.2,1.59,7.73,7.73,0,0,0,1.59-1.59h0a52,52,0,0,1,83.2,0,8,8,0,0,0,12.8-9.61A67.85,67.85,0,0,0,203,197.51ZM80,144a24,24,0,1,1-24,24A24,24,0,0,1,80,144Zm96,0a24,24,0,1,1-24,24A24,24,0,0,1,176,144Z">
                       </path>
                   </svg>
                 </div>
-                <div class="error-text" id="table-error">Пожалуйста, выберите стол</div>
+                <div class="error-text" id="table-error-modal">Пожалуйста, выберите стол</div>
               </div>
             </div>
-            <button class="date-modal-btn">Забронировать</button>
+            <button class="date-modal-btn" type="submit">Забронировать</button>
         </form>
       </div>
   </div>

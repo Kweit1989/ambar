@@ -460,17 +460,6 @@
   })
 
 
-  const dateModalBtn = document.querySelector('.date-modal-btn');
-  
-  if(dateModalBtn){
-    dateModalBtn.addEventListener('click', function(){
-        dateModal.classList.remove('active');
-        setTimeout(() => {
-          checkoutModal.classList.add('active');
-        }, 300)
-    })
-  }
-  
 
  
   // Модальное окно столов
@@ -658,7 +647,73 @@
   });
 
 
+  // Валидация формы бронирования стола модальное окно
+  const formTableModal = document.getElementById('table-form-modal');
+  
+  const modalDate = document.getElementById('date-modal');
+  const modalTime = document.getElementById('time-modal');
+  const modalTable = document.getElementById('table-modal');
 
+  const modalDateError = document.getElementById('date-error-modal');
+  const modalTimeError = document.getElementById('time-error-modal');
+  const modalTableError = document.getElementById('table-error-modal');
+
+  const svgDateModal = document.getElementById('date-svg-modal');
+  const svgTimeModal = document.getElementById('time-svg-modal');
+  const svgTableModal = document.getElementById('table-svg-modal');
+
+  formTableModal.addEventListener('submit', function (e) {
+    let valid = true;
+
+    // Проверка даты
+    if (!modalDate.value.trim()) {
+      modalDate.classList.add('error');
+      modalDateError.style.height = '20px';
+      svgDateModal.style.fill = '#e57373'
+      valid = false;
+    } else {
+      modalDate.classList.remove('error');
+      modalDateError.style.height = '0px';
+      svgDateModal.style.fill = '#cda45e'
+    }
+
+    // Проверка времени
+    if (!modalTime.value.trim()) {
+      modalTime.classList.add('error');
+      modalTimeError.style.height = '20px'
+      svgTimeModal.style.fill = '#e57373'
+      valid = false;
+    } else {
+      modalTime.classList.remove('error');
+      modalTimeError.style.height = '0px';
+      svgTimeModal.style.fill = '#cda45e'
+    }
+
+    // Проверка стола
+    if (!modalTable.value.trim()) {
+      modalTable.classList.add('error');
+      modalTableError.style.height = '20px'
+      svgTableModal.style.fill = '#e57373'
+      valid = false;
+    } else {
+      modalTable.classList.remove('error');
+      modalTableError.style.height = '0px';
+      svgTableModal.style.fill = '#cda45e'
+    }
+
+    // Если есть хотя бы одна ошибка — не отправлять форму
+    if (!valid) {
+      e.preventDefault();
+      return; // Выход из обработчика
+    }
+
+    e.preventDefault();
+    // Выполняем переход, если форма валидна
+    dateModal.classList.remove('active');
+    setTimeout(() => {
+      checkoutModal.classList.add('active');
+    }, 300);
+  });
 
 })();
 
