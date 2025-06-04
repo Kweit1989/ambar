@@ -556,7 +556,7 @@
   // Выбор стола
   document.querySelectorAll('.table-option').forEach(item => {
     item.addEventListener('click', function() {
-      tableChose.style.height = '30px'
+      tableChose.style.height = '34px'
       const tableName = this.dataset.table;
       tableChose.addEventListener('click', function(){
         activeInput.value = tableName;
@@ -596,6 +596,66 @@
   });
 
 
+
+  // Валидация формы бронирования стола
+  const formTable = document.getElementById('table-form');
+  
+  const mainDate = document.getElementById('date');
+  const mainTime = document.getElementById('time');
+  const mainTable = document.getElementById('table');
+
+  const mainDateError = document.getElementById('date-error');
+  const mainTimeError = document.getElementById('time-error');
+  const mainTableError = document.getElementById('table-error');
+
+  const svgDate = document.getElementById('date-svg');
+  const svgTime = document.getElementById('time-svg');
+  const svgTable = document.getElementById('table-svg');
+
+  formTable.addEventListener('submit', function (e) {
+  let valid = true;
+
+    // Проверка даты
+    if (!mainDate.value.trim()) {
+      mainDate.classList.add('error');
+      mainDateError.style.height = '20px';
+      svgDate.style.fill = '#e57373'
+      valid = false;
+    } else {
+      mainDate.classList.remove('error');
+      mainDateError.style.height = '0px';
+      svgDate.style.fill = '#cda45e'
+    }
+
+    // Проверка времени
+    if (!mainTime.value.trim()) {
+      mainTime.classList.add('error');
+      mainTimeError.style.height = '20px'
+      svgTime.style.fill = '#e57373'
+      valid = false;
+    } else {
+      mainTime.classList.remove('error');
+      mainTimeError.style.height = '0px';
+      svgTime.style.fill = '#cda45e'
+    }
+
+    // Проверка стола
+    if (!mainTable.value.trim()) {
+      mainTable.classList.add('error');
+      mainTableError.style.height = '20px'
+      svgTable.style.fill = '#e57373'
+      valid = false;
+    } else {
+      mainTable.classList.remove('error');
+      mainTableError.style.height = '0px';
+      svgTable.style.fill = '#cda45e'
+    }
+
+    // Если есть хотя бы одна ошибка — не отправлять форму
+    if (!valid) {
+      e.preventDefault();
+    }
+  });
 
 
 

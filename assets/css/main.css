@@ -1717,8 +1717,9 @@ section,
   box-shadow: none;
   border-radius: 0;
   color: var(--default-color);
-  background-color: color-mix(in srgb, var(--background-color), transparent 20%);
+  background-color: transparent;
   border-color: var(--accent-color);
+  transition: border-color 0.5s ease-in;
 }
 
 .book-a-table .php-email-form input[type=text]:focus,
@@ -2173,28 +2174,77 @@ input[type="radio"]:checked::after {
 
 
 /* Table */
-#date,
-#date-modal{
-  background: url('../img/svg/calendar.svg') no-repeat right 10px center;
-  background-size: 20px 20px;
- 
+.col-relative {
+  position: relative;
+  z-index: 2;
 }
-#time,
-#time-modal {
-  background: url('../img/svg/clock.svg') no-repeat right 10px center;
-  background-size: 20px 20px;
- 
+.svg-absolute{
+  position: absolute;
+  z-index: -1;
+  right: 10px;
+  top: 47%;
+  transform: translateY(-50%);
+  transition: fill 0.5s ease-in;
 }
 #table,
 #table-modal {
-  background: url('../img/svg/persons.svg') no-repeat right 10px center;
-  background-size: 20px 20px;
+  cursor: pointer;
 }
 #table::placeholder,
 #date::placeholder,
-#time::placeholder{
+#time::placeholder,
+#date-modal::placeholder,
+#time-modal::placeholder,
+#table-modal::placeholder{
   color: var(--default-color);
+  transition: color 0.5s ease-in;
 }
+#table.error::placeholder,
+#date.error::placeholder,
+#time.error::placeholder, 
+#date-modal.error::placeholder, 
+#time-modal.error::placeholder,
+#table-modal.error::placeholder{ 
+  color: #e57373;
+}
+
+.error-text {
+  color: #e57373;
+  font-size: 14px;
+  margin-top: 5px;
+  height: 0px;
+  overflow: hidden;
+  transition: height 0.5s ease-in;
+}
+
+input.error {
+  border-color: #e57373 !important;
+}
+
+/* Modal table date */
+.col-relative  > input{
+    background-color: transparent;
+    color: var(--default-color);
+    border: 1px solid var(--accent-color);
+}
+.col-relative> input:focus{
+    background-color: transparent;
+    color: var(--default-color);
+    box-shadow: none;
+    border: 1px solid var(--accent-color);
+}
+.col-relative > input::placeholder{
+    color: var(--default-color);
+}
+.date-modal-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 5px 15px;
+    border-radius: 5px;
+    background-color: var(--accent-color);
+    border: none;
+}
+
 
 /* Date */
 .flatpickr-calendar{
@@ -2297,10 +2347,6 @@ input[type="radio"]:checked::after {
 .flatpickr-time .flatpickr-am-pm:focus {
   background-color: var(--accent-color);
 }
-
-
-
-
 
 
 
@@ -2644,38 +2690,6 @@ input[type="radio"]:checked::after {
 }
 .checkout-form-comment:focus{
     outline: none;
-}
-
-/* Modal table date */
-.date-modal-form {
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
-  border: 1px solid var(--accent-color);
-  padding: 15px;
-  border-radius: 5px;
-}
-.date-modal-form  > input{
-    background-color: transparent;
-    color: var(--default-color);
-    border: 1px solid var(--accent-color);
-}
-.date-modal-form > input:focus{
-    background-color: transparent;
-    color: var(--default-color);
-    box-shadow: none;
-    border: 1px solid var(--accent-color);
-}
-.date-modal-form > input::placeholder{
-    color: var(--default-color);
-}
-.date-modal-btn {
-    display: block;
-    margin: 0 auto;
-    padding: 5px 15px;
-    border-radius: 5px;
-    background-color: var(--accent-color);
-    border: none;
 }
 
 /* Modal table chose  */
